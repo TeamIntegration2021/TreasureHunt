@@ -15,13 +15,18 @@ class menu {
 public:
 	void DisplayMenu();
 	void askName();
+	string backstory = " ";
+	string askForName = "What is your name?  ";
+	string pName;
+	void beginGame()
+	
 
 
 
-	//string playerName;//
+	
 	//const timer = ?//
 	//char choice//
-	//void beginGame()//
+
 
 
 
