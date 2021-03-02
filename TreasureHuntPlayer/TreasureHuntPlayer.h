@@ -22,6 +22,8 @@ class TreasureHuntPlayer
 		void makeChoice(char);
 		string getPlayerName() const;
 		string getPlayerLocation() const;
+
+		//test line
 		
 };
 #endif
