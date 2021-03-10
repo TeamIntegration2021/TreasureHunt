@@ -23,12 +23,14 @@ void menu::askName() {
 
 	//use setplayer name function
 	traveler.setPlayerName(pName);
+	cout << "Hello Traveler " << traveler.getPlayerName() << ", Welcome!!" << endl;
 
 	
 
 }
 
-void menu::beginGame() {
+void menu::beginGame()
+{
 
 
 }

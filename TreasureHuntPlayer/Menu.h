@@ -1,6 +1,5 @@
 #include<iostream>
 #include "TreasureHuntPlayer.h"
-#include "TreasureHuntPlayer.cpp"
 using namespace std;
 
 #ifndef Menu_h
