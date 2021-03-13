@@ -18,7 +18,8 @@ public:
 	string backstory = " ";
 	string askForName = "What is your name?  ";
 	string pName;
-	void beginGame()
+	void beginGame();
+	void DisplayGameName();
 	
 
 

@@ -32,3 +32,8 @@ void menu::beginGame() {
 
 
 }
+
+void menu::DisplayGameName() {
+
+
+}
