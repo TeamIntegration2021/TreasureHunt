@@ -18,6 +18,7 @@ public:
 	string askForName = "What is your name?  ";
 	string pName;
 	void beginGame();
+	void DisplayGameName();
 
 	
 
