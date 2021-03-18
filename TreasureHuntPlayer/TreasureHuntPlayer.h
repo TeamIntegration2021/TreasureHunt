@@ -1,5 +1,6 @@
 /**#include directives to access, input/output function and strings**/
 #include<iostream>
+#include <iomanip>
 #include <string>
 
 #ifndef TreasureHuntPlayer_h

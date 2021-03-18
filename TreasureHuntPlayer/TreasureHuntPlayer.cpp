@@ -1,5 +1,6 @@
 /**#include directives to access, input/output function, strings and the player class information**/
 #include<iostream>
+#include <iomanip>
 #include <string>
 #include "TreasureHuntPlayer.h"
 using namespace std;

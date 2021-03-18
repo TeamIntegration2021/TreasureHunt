@@ -1,4 +1,5 @@
 #include<iostream>
+#include <iomanip>
 #include "TreasureHuntPlayer.h"
 using namespace std;
 
@@ -14,9 +15,6 @@ class menu {
 public:
 	void DisplayMenu();
 	void askName();
-	string backstory = " ";
-	string askForName = "What is your name?  ";
-	string pName;
 	void beginGame();
 	void DisplayGameName();
 
