@@ -22,18 +22,21 @@ namespace std
 			string word;
 			int code;
 		} ;
-		enum directions { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
+		enum directions 
+		{ 
+			NORTH=0, NORTHEAST=1, EAST=2, SOUTHEAST=3, SOUTH=4, SOUTHWEST=5, WEST=6, NORTHWEST=7 
+		} playerDir;
 		const int NONE = -1;
 		const int DIRS = 8;
 		void setPlayerName(string);
 		void setPlayerLocation(string);
-		void setDirections(word*);
-		void makeChoice(enum);
+		void setDirections();
+		void makeChoice();
 		string getPlayerName() const;
 		string getPlayerLocation() const;
 		string playerName = " ";
 		string playerLocation = " ";
-		int playerChoice = ' ';
+		int playerChoice = 5;
 		//test line
 		
 	
