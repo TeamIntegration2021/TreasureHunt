@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="TreasureHuntMap.h" />
     <ClInclude Include="TreasureHuntPlayer.h" />
   </ItemGroup>
   <ItemGroup>

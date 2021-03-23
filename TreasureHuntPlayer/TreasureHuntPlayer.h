@@ -17,6 +17,9 @@ namespace std
 
 		// declares and initilaizes variables to hold the player's name, location and choice of movement
 	public:
+		enum directions { NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST };
+		const int NONE = -1;
+		const int DIRS = 8;
 		void setPlayerName(string);
 		void setPlayerLocation(string);
 		void makeChoice(char);
@@ -26,7 +29,37 @@ namespace std
 		string playerLocation = " ";
 		char playerChoice = ' ';
 		//test line
+		struct word
+		{
+			string word;
+			int code;
+		};
+		void set_directions(word* dir)
+		{
+			dir[NORTH].code = NORTH;
+			dir[NORTH].word = "NORTH";
+			dir[NORTHEAST].code = NORTHEAST;
+			dir[NORTHEAST].word = "NORTHEAST";
+			dir[EAST].code = EAST;
+			dir[EAST].word = "EAST";
+			dir[SOUTHEAST].code = SOUTHEAST;
+			dir[SOUTHEAST].word = "SOUTHEAST";
+			dir[SOUTH].code = SOUTH;
+			dir[SOUTH].word = "SOUTH";
+			dir[NORTHWEST].code = NORTHWEST;
+			dir[NORTHWEST].word = "NORTHWEST";
+			dir[WEST].code = WEST;
+			dir[WEST].word = "WEST";
+			dir[SOUTHWEST].code = SOUTHWEST;
+			dir[SOUTHWEST].word = "SOUTHWEST";
+			
+
+			// ...and so on, through SOUTH and up to WEST.
+		}
+
+		
 
 	};
+	
 }
 #endif
