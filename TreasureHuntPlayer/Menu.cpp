@@ -37,7 +37,7 @@ string titleBoxVert = "|                    |";
 string title =        "|  INTA: THE JUNGLE  |";
 
 string boarScenario = " "; //add text for boar scenario, create switches for choices
-
+TreasureHuntPlayer traveler;
 
 /**
    creates member function to display menu
@@ -167,9 +167,7 @@ void menu::DisplayMenu()
 void menu::askName() {
 	cout << askForName;
 	cin >> pName;
-	 /** 
-	 
-	 if (cin.fail()) // if name is not of type string prompt user again.
+	 /**if (cin.fail()) // if name is not of type string prompt user again.
 	{
 		cout << "Enter a valid name" << endl;
 		cin > pName;
@@ -180,7 +178,7 @@ void menu::askName() {
 
 	
 //create an object to call other functions
-	TreasureHuntPlayer traveler;
+	
 
 
 	//use setplayer name function
@@ -198,7 +196,7 @@ void menu::beginGame()
 	// cout << boarScenario << endl;
 	//cin>>directions
 
-	switch (directions) //add direct
+	switch (traveler.playerChoice) //add direct
 	{
 	case 1: //N
 		cout << "Cant go north";
@@ -219,6 +217,7 @@ void menu::beginGame()
 	case 8: //Nw
 		break;
 	default:
+		break;
 	//please enter a valid direction
 		
 	}

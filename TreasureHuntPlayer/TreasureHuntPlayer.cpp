@@ -16,9 +16,15 @@ void TreasureHuntPlayer::setPlayerLocation(string location)
 	playerLocation = location;
 }
 
-void TreasureHuntPlayer::makeChoice(char choice)
+void TreasureHuntPlayer::setDirections()
 {
-	playerChoice = choice;
+}
+
+void TreasureHuntPlayer::makeChoice()
+{
+	cout << "Enter the direction you would like to go:";
+	cin >> playerChoice;
+	directions r = static_cast<directions>(playerChoice);
 }
 
 /** member functions to return player name and location hint**/
