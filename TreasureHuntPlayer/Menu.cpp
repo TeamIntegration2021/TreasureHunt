@@ -36,6 +36,8 @@ string titleBoxHori = "----------------------";
 string titleBoxVert = "|                    |";
 string title =        "|  INTA: THE JUNGLE  |";
 
+string boarScenario = " "; //add text for boar scenario, create switches for choices
+
 
 /**
    creates member function to display menu
@@ -182,7 +184,8 @@ void menu::askName() {
 
 void menu::beginGame()
 {
-
+	// cout << boarScenario << endl;
+	//cin>>dire
 
 }
 
