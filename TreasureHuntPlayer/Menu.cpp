@@ -185,7 +185,34 @@ void menu::askName() {
 void menu::beginGame()
 {
 	// cout << boarScenario << endl;
-	//cin>>dire
+	//cin>>directions
+
+	switch (directions) //add direct
+	{
+	case 1: //N
+		cout << "Cant go north";
+		//take time off? punishment
+		break;
+	case 2 : //NE
+		break;
+	case 3 : //E
+		break;
+	case 4: //SE
+		break;
+	case 5: //S
+		break;
+	case 6: //SW
+		break;
+	case 7: //W
+		break;
+	case 8: //Nw
+		break;
+	default:
+	//please enter a valid direction
+		
+	}
+
+
 
 }
 
