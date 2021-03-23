@@ -14,7 +14,7 @@ int main()
 	travelerMenu.DisplayMenu();
 	travelerMenu.askName();
 	word directions[DIRS];
-	set_directions(directions);
+	setDirections(directions);
 	
 	return 0;
 }
