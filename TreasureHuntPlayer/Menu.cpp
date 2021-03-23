@@ -167,6 +167,14 @@ void menu::DisplayMenu()
 void menu::askName() {
 	cout << askForName;
 	cin >> pName;
+	 /**if (cin.fail()) // if name is not of type string prompt user again.
+	{
+		cout << "Enter a valid name" << endl;
+		cin > pName;
+	}
+	else **/
+	
+
 
 	
 //create an object to call other functions
@@ -176,6 +184,7 @@ void menu::askName() {
 	//use setplayer name function
 	traveler.setPlayerName(pName);
 	cout << "Hello Traveler " << traveler.getPlayerName() << ", Welcome!!" << endl;
+	//add input validation for name
 	
 
 	
