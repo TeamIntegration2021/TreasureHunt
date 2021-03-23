@@ -13,8 +13,7 @@ int main()
 	travelerMenu.DisplayGameName();
 	travelerMenu.DisplayMenu();
 	travelerMenu.askName();
-	word directions[DIRS];
-	setDirections(directions);
+	
 	
 	return 0;
 }
