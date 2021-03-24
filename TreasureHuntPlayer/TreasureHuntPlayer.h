@@ -17,13 +17,13 @@ namespace std
 
 		// declares and initilaizes variables to hold the player's name, location and choice of movement
 	public:
-		enum directions 
-		{ 
-			NORTH, NORTHEAST=1, EAST=2, SOUTHEAST=3, SOUTH=4, SOUTHWEST=5, WEST=6, NORTHWEST=7 
-		} ;
+		enum directions
+		{
+			NORTH, NORTHEAST = 1, EAST = 2, SOUTHEAST = 3, SOUTH = 4, SOUTHWEST = 5, WEST = 6, NORTHWEST = 7
+		};
 		enum locations
 		{
-			FOREST = 8,FEED = 9, DIRTPATH = 10, VINES = 11, MOUNTAIN = 12, RIVER = 13, WEST = 14, NORTHWEST = 15
+			BEACH = 1, FOREST = 2, FEED = 3, DIRTPATH = 4, VINES = 5, MOUNTAIN = 6, RIVER = 7, DISTRACT = 8, WAIT = 9, TREASURE = 10
 		};
 		void setPlayerName(string);
 		void setPlayerLocation(string);
@@ -35,6 +35,7 @@ namespace std
 		string playerName = " ";
 		string playerLocation = " ";
 		int playerChoice = 5;
+		locations playerSpot = BEACH;
 		//test line
 		
 	

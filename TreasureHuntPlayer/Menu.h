@@ -17,6 +17,7 @@ public:
 	void askName();
 	void beginGame();
 	void DisplayGameName();
+	void showRoutes() ;
 
 	
 

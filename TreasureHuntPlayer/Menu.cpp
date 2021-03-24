@@ -17,7 +17,7 @@ string backstoryLine2 = "During the height of his conquests, Captain Inta amasse
 string backstoryLine3 = "During his later years, the Captain sat sail once more, arriving on the deserted island we now know as Inta and making it his home for good";
 string backstoryLine4 = "Legend has it, Captain Inta, before his death of old age, buried his treasures here on the island, and scattered clues  throughout, so that future travelers may discover them and engage in the quest to uncover the hidden loot";
 
-string beachScroll = "Begin your journey along the path that leads southwards from the northern coast of the island";
+string beachScroll = "Your journey awaits you along the path that leads southwards from the northern coast of the island";
 
 string characterIntroLine1 = "You and two of your friends are on vacation, sailing off the shore of the Virgin Islands when suddenly---";
 string characterIntroLine2 = "A terrible storm redirects your boat and leaves you washed up on the shore of a mysterious, deserted island.";
@@ -208,8 +208,7 @@ void menu::beginGame()
 {
 	// cout << boarScenario << endl;
 	//cin>>directions
-	cout << beachScroll << endl;
-	cout << traveler.makeMove;
+	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
 	traveler.makeChoice();
 
 	switch (traveler.playerChoice) //add direct
@@ -256,4 +255,37 @@ void menu::DisplayGameName()
 	cout << setw(65) << right << titleBoxHori << endl;
 	
 
+}
+
+void menu::showRoutes()
+{
+	switch (traveler.playerSpot) 
+	{
+	case 1: //beach
+		break;
+	case 2: //forest
+		break;
+	case 3: //feed boar
+		break;
+	case 4: //fight boar
+		break;
+	case 5: //dirtpath
+		break;
+	case 6: //vines
+		break;
+	case 7: //mountain
+		break;
+	case 8: //river
+		break;
+	case 9: // distract
+		break;
+	case 10: //wait
+		break;
+	case 11: //treasure
+		break;
+	default:
+		break;
+		//please enter a valid direction
+
+	}
 }
