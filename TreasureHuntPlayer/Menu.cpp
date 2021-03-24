@@ -6,6 +6,8 @@
 #include <chrono>
 #include "TreasureHuntPlayer.h"
 #include "Menu.h"
+#include <stdlib.h>
+
 using namespace std;
 //Set of strings that introduce story, character, and game title
 string askForName = "Oh and one more thing, please enter your name so we know what to put on your tombstone :";
@@ -15,6 +17,8 @@ string backstoryLine2 = "During the height of his conquests, Captain Inta amasse
 string backstoryLine3 = "During his later years, the Captain sat sail once more, arriving on the deserted island we now know as Inta and making it his home for good";
 string backstoryLine4 = "Legend has it, Captain Inta, before his death of old age, buried his treasures here on the island, and scattered clues  throughout, so that future travelers may discover them and engage in the quest to uncover the hidden loot";
 
+string beachScroll = "Begin your journey along the path that leads southwards from the northern coast of the island";
+
 string characterIntroLine1 = "You and two of your friends are on vacation, sailing off the shore of the Virgin Islands when suddenly---";
 string characterIntroLine2 = "A terrible storm redirects your boat and leaves you washed up on the shore of a mysterious, deserted island.";
 string characterIntroLine3 = "Your boat cannot be salvaged so you set off along the beach in search of any inhabitants that may be able to aid your party.";
@@ -22,7 +26,15 @@ string characterIntroLine4 = "Your search ends in vain but during so, you discov
 
 string fastForward = "------------------FASTFORWARD 200 YEARS------------------";
 
+string feedBoar = "Food truly is the language of all! The beast has accepted your fruits and nuts as offering, you may now retrieve the key and continue on your quest";
+string fightBoar = "You have antagonized the beast and its home now you must pay the price if you do not make haste. The key is out of reach. The boar is now charging angrily. Quickly! What will you do?";
+
 string pName;
+
+string quest1scroll = "You have reached the home where the beast lay his head. He may just be hungry, or just agitated to see you, but alas you must maneuver wisely to retrieve the key from the beast's den ";
+string quest2scroll = "You have reached the great divides of Inta Island. Quickly choose as time is of the essence. You can either traverse through the waters or trek across the great divides ";
+string quest3scroll = "You have made it to the final and most challenging quest. Many bandits from far and wide have come to the island to capture the treasure but to no avail. Just ahead you is a camp of bandits guarding the 3rd key in a tent. Your wits and resources are your best guide during this challenge";
+
 
 string scrollText = "Hello travelers, welcome to Inta Island! Here, the greatest treasure known to man lies within, but it is up to you to discover it! Here lies incredible dangers, treacherous landscapes, and dangerous enemies. But be warned, time is not on your side, and you must escape with Inta's bounty in less than 24 hours, or";
 string scrollText2 = "well you really don't wanna know. Good luck and happy hunting!";
@@ -48,6 +60,7 @@ TreasureHuntPlayer traveler;
 **/
 void menu::DisplayMenu() 
 {
+	
 	_sleep(1000);
 	cout << backstoryLine1;
 	for (int i = 0; i < 3; i++)
@@ -195,6 +208,9 @@ void menu::beginGame()
 {
 	// cout << boarScenario << endl;
 	//cin>>directions
+	cout << beachScroll << endl;
+	cout << traveler.makeMove;
+	traveler.makeChoice();
 
 	switch (traveler.playerChoice) //add direct
 	{
@@ -203,13 +219,16 @@ void menu::beginGame()
 		//take time off? punishment
 		break;
 	case 2 : //NE
+		cout << "Cant go northeast";
 		break;
 	case 3 : //E
+		cout << "Cant go east";
 		break;
 	case 4: //SE
+		cout << "Cant go southeast";
 		break;
 	case 5: //S
-		break;
+		cout << quest1scroll;
 	case 6: //SW
 		break;
 	case 7: //W
@@ -228,11 +247,13 @@ void menu::beginGame()
 
 void menu::DisplayGameName() 
 {
+	system("Color 5E");
 	_sleep(1000);
 	cout << setw(65) << right << titleBoxHori << endl;
 	cout << setw(65) << right << titleBoxVert << endl;
 	cout << setw(65) << right << title << endl;
 	cout << setw(65) << right << titleBoxVert << endl;
 	cout << setw(65) << right << titleBoxHori << endl;
+	
 
 }

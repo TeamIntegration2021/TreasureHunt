@@ -22,7 +22,7 @@ void TreasureHuntPlayer::setDirections()
 
 void TreasureHuntPlayer::makeChoice()
 {
-	cout << "Enter the direction you would like to go:";
+	cout << makeMove;
 	cin >> playerChoice;
 	directions r = static_cast<directions>(playerChoice);
 }
