@@ -1,4 +1,4 @@
-//create menu class to display menu and ask for users name, then begin the game using their inputed name
+﻿//create menu class to display menu and ask for users name, then begin the game using their inputed name
 #pragma warning(disable : 4996)
 #include<iostream>
 #include<string>
@@ -208,32 +208,135 @@ void menu::beginGame()
 {
 	// cout << boarScenario << endl;
 	//cin>>directions
+	traveler.setPlayerLocation("BEACH");
+	cout << traveler.getPlayerLocation();
 	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
+	cout << endl;
+	showRoutes();
+	cout << endl;
 	traveler.makeChoice();
-
 	switch (traveler.playerChoice) //add direct
 	{
-	case 1: //N
+	case 1: //beach
 		cout << "Cant go north";
 		//take time off? punishment
 		break;
-	case 2 : //NE
-		cout << "Cant go northeast";
+	case 2 : //forest
+	{
+		while (traveler.getPlayerLocation() != "BEACH")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			traveler.makeChoice();
+		}
+			traveler.setPlayerLocation("FOREST");
+			cout << quest1scroll;
+			//break;
+	    
+	}
+	case 3 : //feed boar
+	{
+		while (traveler.getPlayerLocation() != "FOREST")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		traveler.playerChoice = 7;
 		break;
-	case 3 : //E
-		cout << "Cant go east";
+	}
+	case 4: //fight boar
+	{
+		while (traveler.getPlayerLocation() != "FOREST")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
 		break;
-	case 4: //SE
-		cout << "Cant go southeast";
+	}
+	case 5: //dirtpath
+	{
+		while (traveler.getPlayerLocation() != "FOREST")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		traveler.playerChoice = 9;
 		break;
-	case 5: //S
-		cout << quest1scroll;
-	case 6: //SW
+	}
+	case 6: //vines
+	{
+		while (traveler.getPlayerLocation() != "FOREST")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
 		break;
-	case 7: //W
+	}
+	
+	case 7: //mountain
+	{
+		while (traveler.getPlayerLocation() != "FOREST" || traveler.getPlayerLocation() != "VINES")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		cout << quest2scroll;
 		break;
-	case 8: //Nw
+	}
+	case 8: //river
+	{
+		while (traveler.getPlayerLocation() != "MOUNTAIN")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
 		break;
+	}
+	case 9: // pirate camp
+	{
+		while (traveler.getPlayerLocation() != "MOUNTAIN")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		cout << quest3scroll;
+	}
+	case 10: //distract
+	{
+		while (traveler.getPlayerLocation() != "PIRATE CAMP")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		break;
+	}
+	case 11: //wait
+	{
+		while (traveler.getPlayerLocation() != "PIRATE CAMP")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		break;
+	}
+	case 12: //treasure
+	{
+		while (traveler.getPlayerLocation() != "PIRATE CAMP")
+		{
+			cout << "Im sorry! you cannot make that move. Try again" << endl;
+			showRoutes();
+			traveler.makeChoice();
+		}
+		break;
+	}
 	default:
 		break;
 	//please enter a valid direction
@@ -262,26 +365,44 @@ void menu::showRoutes()
 	switch (traveler.playerSpot) 
 	{
 	case 1: //beach
+	{
+		cout << "0 - QUIT" << endl;
+		cout << "2 - FOREST(SOUTH)" << endl;
 		break;
+	}
 	case 2: //forest
-		break;
+	{
+		cout << "2 - FEED AND DISTRACT(WEST)" << endl;
+		cout << "3 - ATTACK(EAST)" << endl;
+	}
 	case 3: //feed boar
 		break;
 	case 4: //fight boar
-		break;
+	{
+		cout << "4 - RUN DOWN DIRTPATH(SOUTH)" << endl;
+		cout << "5 - SWING ACROSS GORGE(SW)" << endl;
+	}
 	case 5: //dirtpath
 		break;
 	case 6: //vines
 		break;
 	case 7: //mountain
-		break;
+	{
+		cout << "7 - TREK THROUGH MOUNTAINS" << endl;
+		cout << "8 - SWIM ACROSS RIVER" << endl;
+	}
 	case 8: //river
 		break;
-	case 9: // distract
+	case 9: // pirate camp
+	{
+		cout << "10 - TREK THROUGH MOUNTAINS" << endl;
+		cout << "11 - SWIM ACROSS RIVER" << endl;
+	}
+	case 10: //distract
 		break;
-	case 10: //wait
+	case 11: //wait
 		break;
-	case 11: //treasure
+	case 12: //treasure
 		break;
 	default:
 		break;

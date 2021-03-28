@@ -1,4 +1,4 @@
-/**#include directives to access, input/output function and strings**/
+﻿/**#include directives to access, input/output function and strings**/
 #include<iostream>
 #include <iomanip>
 #include <string>
@@ -23,7 +23,7 @@ namespace std
 		};
 		enum locations
 		{
-			BEACH = 1, FOREST = 2, FEED = 3, DIRTPATH = 4, VINES = 5, MOUNTAIN = 6, RIVER = 7, DISTRACT = 8, WAIT = 9, TREASURE = 10
+			QUIT = 0, BEACH = 1, FOREST = 2, FEED = 3, FIGHT = 4, DIRTPATH = 5, VINES = 6, MOUNTAIN = 7, RIVER = 8, PIRATECAMP = 9, DISTRACT = 10, WAIT = 11, TREASURE = 12
 		};
 		void setPlayerName(string);
 		void setPlayerLocation(string);
