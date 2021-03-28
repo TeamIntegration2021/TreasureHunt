@@ -17,7 +17,7 @@ namespace std
 
 
 		
-	public:
+	public: 
 	
 
 		string mapH1=              " N ";
