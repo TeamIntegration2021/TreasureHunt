@@ -51,6 +51,8 @@ string title =        "|  INTA: THE JUNGLE  |";
 string boarScenario = " "; //add text for boar scenario, create switches for choices
 TreasureHuntPlayer traveler;
 
+TreasureHuntMap Map;
+
 /**
    creates member function to display menu
    displays backstory line by line using sleep function to give user time to read

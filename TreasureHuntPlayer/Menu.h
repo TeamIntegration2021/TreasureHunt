@@ -1,6 +1,7 @@
 #include<iostream>
 #include <iomanip>
 #include "TreasureHuntPlayer.h"
+#include "TreasureHuntMap.h"
 using namespace std;
 
 #ifndef Menu_h
