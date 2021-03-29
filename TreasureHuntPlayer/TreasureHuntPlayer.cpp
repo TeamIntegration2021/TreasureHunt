@@ -16,51 +16,13 @@ void TreasureHuntPlayer::setPlayerLocation(string location)
 	playerLocation = location;
 }
 
-void TreasureHuntPlayer::setDirections()
-{
-	/** cout << boarScenario << endl;
-	//cin>>directions
-	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
-	cout << endl;
-	showRoutes();
-	cout << endl;
-	traveler.makeChoice();
-	switch (traveler.r) //add direct
-	{
-	case 1: //N
-		cout << "Cant go north";
-		//take time off? punishment
-		break;
-	case 2: //NE
-		cout << "Cant go northeast";
-		break;
-	case 3: //E
-		cout << "Cant go east";
-		break;
-	case 4: //SE
-		cout << "Cant go southeast";
-		break;
-	case 5: //S
-		cout << quest1scroll;
-	case 6: //SW
-		break;
-	case 7: //W
-		break;
-	case 8: //Nw
-		break;
-	default:
-		break;
-		//please enter a valid direction
-
-	}**/
-}
 
 void TreasureHuntPlayer::makeChoice()
 {
 	cout << endl;
 	cout << makeMove;
 	cin >> playerChoice;
-	locations r = static_cast<locations>(playerChoice);
+	playerSpot = static_cast<locations>(playerChoice);
 }
 
 /** member functions to return player name and location hint**/

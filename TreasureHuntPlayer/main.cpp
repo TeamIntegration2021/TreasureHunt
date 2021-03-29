@@ -13,6 +13,7 @@ int main()
 	//travelerMenu.DisplayGameName();
 	//travelerMenu.DisplayMenu();
 	travelerMenu.askName();
+	travelerMenu.displayIconLegend();
 	travelerMenu.beginGame();
 	
 	

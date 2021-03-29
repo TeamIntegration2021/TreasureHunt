@@ -23,14 +23,13 @@ namespace std
 		};
 		void setPlayerName(string);
 		void setPlayerLocation(string);
-		void setDirections();
 		void makeChoice();
 		string getPlayerName() const;
 		string getPlayerLocation() const;
 		string makeMove = "MAKE YOUR MOVE:";
 		string playerName = " ";
 		string playerLocation = " ";
-		int playerChoice = 5;
+		int playerChoice = 1;
 		locations playerSpot = BEACH;
 		//test line
 		

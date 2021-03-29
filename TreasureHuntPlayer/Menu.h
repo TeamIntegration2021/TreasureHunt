@@ -15,6 +15,7 @@ class menu {
 	// no private member functions, so that other classes and functions can call/use
 public:
 	void DisplayMenu();
+	void displayIconLegend();
 	void askName();
 	void beginGame();
 	void DisplayGameName();

@@ -29,6 +29,16 @@ string fastForward = "------------------FASTFORWARD 200 YEARS------------------"
 string feedBoar = "Food truly is the language of all! The beast has accepted your fruits and nuts as offering, you may now retrieve the key and continue on your quest";
 string fightBoar = "You have antagonized the beast and its home now you must pay the price if you do not make haste. The key is out of reach. The boar is now charging angrily. Quickly! What will you do?";
 
+string mapIconDirtpath = "[===]";
+string mapIconForest = "[/|\\]";
+string mapIconGorge = "[\\_/]";
+string mapIconPirateCamp = "[->x]";
+string mapIconRiver = "(~~~)";
+string mapIconTreasure1 = "|\\/\\/\\/\\/|";
+string mapIconTreasure2 = "|  INTA  |";
+string mapIconTreasure3 = "|________|";
+
+
 string pName;
 
 string quest1scroll = "You have reached the home where the beast lay his head. He may just be hungry, or just agitated to see you, but alas you must maneuver wisely to retrieve the key from the beast's den ";
@@ -179,6 +189,21 @@ void menu::DisplayMenu()
 	cout << endl;
 }
 
+void menu::displayIconLegend()
+{   
+	cout << "MAP LEGEND" << endl;
+	cout << "___________________________" << endl;
+	cout << "Dirt trail: " << mapIconDirtpath << endl;
+	cout << "Forest: " << mapIconForest << endl;
+	cout << "Gorge: " << mapIconGorge << endl;
+	cout << "Pirate Camp: " << mapIconPirateCamp << endl;
+	cout << "River: " << mapIconRiver << endl;
+	cout << "          " << mapIconTreasure1 << endl;
+	cout << "Treasure: " << mapIconTreasure2 << endl;
+	cout << "          " << mapIconTreasure3 << endl;
+
+}
+
 void menu::askName() {
 	cout << askForName;
 	cin >> pName;
@@ -214,135 +239,140 @@ void menu::beginGame()
 	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
 	cout << endl;
 	cout << endl;
-	showRoutes();
-	cout << endl;
-	traveler.makeChoice();
-	switch (traveler.playerChoice) //add direct
-	{
-	case 1: //beach
-		cout << "Cant go north";
-		//take time off? punishment
-		break;
-	case 2 : //forest
-	{
-		while (traveler.getPlayerLocation() != "BEACH")
-		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			traveler.makeChoice();
-		}
-			traveler.setPlayerLocation("FOREST");
-			cout << quest1scroll;
-			//break;
-	    
-	}
-	case 3 : //feed boar
-	{
-		while (traveler.getPlayerLocation() != "FOREST")
-		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
-		}
-		traveler.playerChoice = 7;
-		break;
-	}
-	case 4: //fight boar
-	{
-		while (traveler.getPlayerLocation() != "FOREST")
-		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
-		}
-		break;
-	}
-	case 5: //dirtpath
-	{
-		while (traveler.getPlayerLocation() != "FOREST")
-		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
-		}
-		traveler.playerChoice = 9;
-		break;
-	}
-	case 6: //vines
-	{
-		while (traveler.getPlayerLocation() != "FOREST")
-		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
-		}
-		break;
-	}
 	
-	case 7: //mountain
+	while (traveler.getPlayerLocation() != "TREASURE")
 	{
-		while (traveler.getPlayerLocation() != "FOREST" || traveler.getPlayerLocation() != "VINES")
+		showRoutes();
+		cout << endl;
+		traveler.makeChoice();
+		switch (traveler.playerSpot) //add direct
 		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
-		}
-		cout << quest2scroll;
-		break;
-	}
-	case 8: //river
-	{
-		if (traveler.getPlayerLocation() != "MOUNTAIN")
+		case 1: //beach
+			cout << "Cant go north";
+			//take time off? punishment
+			break;
+		case 2: //forest
 		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
+			while (traveler.getPlayerLocation() != "BEACH")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			traveler.setPlayerLocation("FOREST");
+			cout << quest1scroll << endl;
+			//break;
+
 		}
-		break;
-	}
-	case 9: // pirate camp
-	{
-		while (traveler.getPlayerLocation() != "MOUNTAIN")
+		case 3: //feed boar
 		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
+			while (traveler.getPlayerLocation() != "FOREST")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			traveler.playerChoice = 7;
+			break;
 		}
-		cout << quest3scroll;
-	}
-	case 10: //distract
-	{
-		while (traveler.getPlayerLocation() != "PIRATE CAMP")
+		case 4: //fight boar
 		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
+			while (traveler.getPlayerLocation() != "FOREST")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			break;
 		}
-		break;
-	}
-	case 11: //wait
-	{
-		while (traveler.getPlayerLocation() != "PIRATE CAMP")
+		case 5: //dirtpath
 		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
+			while (traveler.getPlayerLocation() != "FOREST")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			traveler.playerChoice = 9;
+			break;
 		}
-		break;
-	}
-	case 12: //treasure
-	{
-		while (traveler.getPlayerLocation() != "PIRATE CAMP")
+		case 6: //vines
 		{
-			cout << "Im sorry! you cannot make that move. Try again" << endl;
-			showRoutes();
-			traveler.makeChoice();
+			while (traveler.getPlayerLocation() != "FOREST")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			break;
 		}
-		break;
-	}
-	default:
-		break;
-	//please enter a valid direction
-		
+
+		case 7: //mountain
+		{
+			while (traveler.getPlayerLocation() != "FOREST" || traveler.getPlayerLocation() != "VINES")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			cout << quest2scroll;
+			break;
+		}
+		case 8: //river
+		{
+			if (traveler.getPlayerLocation() != "MOUNTAIN")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			break;
+		}
+		case 9: // pirate camp
+		{
+			while (traveler.getPlayerLocation() != "MOUNTAIN")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			cout << quest3scroll;
+		}
+		case 10: //distract
+		{
+			while (traveler.getPlayerLocation() != "PIRATE CAMP")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			break;
+		}
+		case 11: //wait
+		{
+			while (traveler.getPlayerLocation() != "PIRATE CAMP")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			break;
+		}
+		case 12: //treasure
+		{
+			while (traveler.getPlayerLocation() != "PIRATE CAMP")
+			{
+				cout << "Im sorry! you cannot make that move. Try again" << endl;
+				showRoutes();
+				traveler.makeChoice();
+			}
+			break;
+		}
+		default:
+			break;
+			//please enter a valid direction
+
+		}
 	}
 
 
@@ -366,6 +396,8 @@ void menu::showRoutes()
 {
 	switch (traveler.playerSpot) 
 	{
+	case 0:
+		break;
 	case 1: //beach
 	{
 		cout << "0 - QUIT" << endl;
