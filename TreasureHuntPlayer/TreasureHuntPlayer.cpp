@@ -57,6 +57,7 @@ void TreasureHuntPlayer::setDirections()
 
 void TreasureHuntPlayer::makeChoice()
 {
+	cout << endl;
 	cout << makeMove;
 	cin >> playerChoice;
 	locations r = static_cast<locations>(playerChoice);
