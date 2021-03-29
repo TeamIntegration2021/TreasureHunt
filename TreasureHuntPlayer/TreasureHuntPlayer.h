@@ -19,7 +19,7 @@ namespace std
 	public:
 		enum locations
 		{
-			QUIT = 0, BEACH = 1, FOREST = 2, FEED = 3, FIGHT = 4, DIRTPATH = 5, VINES = 6, MOUNTAIN = 7, RIVER = 8, PIRATECAMP = 9, DISTRACT = 10, WAIT = 11, TREASURE = 12
+			QUIT = 0, BEACH = 1, FOREST = 2, FEED = 3, FIGHT = 4, DIRTPATH = 5, GORGE = 6, MOUNTAIN = 7, RIVER = 8, PIRATECAMP = 9, DISTRACT = 10, WAIT = 11, TREASURE = 12
 		};
 		void setPlayerName(string);
 		void setPlayerLocation(string);
@@ -31,6 +31,7 @@ namespace std
 		string playerLocation = " ";
 		int playerChoice = 1;
 		locations playerSpot = BEACH;
+		locations previousSpot = BEACH;
 		//test line
 		
 	

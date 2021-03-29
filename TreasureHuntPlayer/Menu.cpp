@@ -273,6 +273,7 @@ void menu::beginGame()
 				traveler.makeChoice();
 			}
 			traveler.playerChoice = 7;
+
 			break;
 		}
 		case 4: //fight boar
@@ -283,6 +284,7 @@ void menu::beginGame()
 				showRoutes();
 				traveler.makeChoice();
 			}
+			cout << fightBoar << endl;
 			break;
 		}
 		case 5: //dirtpath
