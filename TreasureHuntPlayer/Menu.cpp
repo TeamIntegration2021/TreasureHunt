@@ -408,15 +408,15 @@ void menu::showRoutes()
 	}
 	case 2: //forest
 	{
-		cout << "2 - FEED AND DISTRACT(WEST)" << endl;
-		cout << "3 - ATTACK(EAST)" << endl;
+		cout << "3 - FEED AND DISTRACT(WEST)" << endl;
+		cout << "4 - ATTACK(EAST)" << endl;
 	}
 	case 3: //feed boar
 		break;
 	case 4: //fight boar
 	{
-		cout << "4 - RUN DOWN DIRTPATH(SOUTH)" << endl;
-		cout << "5 - SWING ACROSS GORGE(SW)" << endl;
+		cout << "5 - RUN DOWN DIRTPATH(SOUTH)" << endl;
+		cout << "6 - SWING ACROSS GORGE(SW)" << endl;
 	}
 	case 5: //dirtpath
 		break;
@@ -431,8 +431,8 @@ void menu::showRoutes()
 		break;
 	case 9: // pirate camp
 	{
-		cout << "10 - TREK THROUGH MOUNTAINS" << endl;
-		cout << "11 - SWIM ACROSS RIVER" << endl;
+		cout << "10 - DISTRACT" << endl;
+		cout << "11 - WAIT" << endl;
 	}
 	case 10: //distract
 		break;

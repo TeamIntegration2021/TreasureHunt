@@ -18,8 +18,8 @@ namespace std
 
 		
 	public: 
-		void std::TreasureHuntMap::displayMap();
-		void std::TreasureHuntMap::updatePosition();
+		//void std::TreasureHuntMap::displayMap();
+		//void std::TreasureHuntMap::updatePosition();
 
 
 	};
