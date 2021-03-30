@@ -107,9 +107,9 @@ void TreasureHuntMap::displayMap() {
 	cout << mapH43;
 	cout << mapH44;
 	cout << mapH45;
-	
 
-   
+
+
 
 
 }
