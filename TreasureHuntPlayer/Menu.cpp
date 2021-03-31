@@ -190,7 +190,7 @@ void menu::DisplayMenu()
 }
 
 void menu::displayIconLegend()
-{   
+{
 	cout << "MAP LEGEND" << endl;
 	cout << "___________________________" << endl;
 	cout << "Dirt trail: " << mapIconDirtpath << endl;
@@ -261,7 +261,7 @@ void menu::beginGame()
 			}
 			traveler.setPlayerLocation("FOREST");
 			cout << quest1scroll << endl;
-			//break;
+			break;
 
 		}
 		case 3: //feed boar
@@ -272,7 +272,7 @@ void menu::beginGame()
 				showRoutes();
 				traveler.makeChoice();
 			}
-			traveler.playerChoice = 7;
+			cout << feedBoar << endl;
 
 			break;
 		}
@@ -285,6 +285,7 @@ void menu::beginGame()
 				traveler.makeChoice();
 			}
 			cout << fightBoar << endl;
+			showRoutes();
 			break;
 		}
 		case 5: //dirtpath
