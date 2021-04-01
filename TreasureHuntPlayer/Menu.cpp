@@ -4,9 +4,10 @@
 #include<string>
 #include <iomanip>
 #include <chrono>
-#include "TreasureHuntPlayer.h"
-#include "Menu.h"
+#include "TreasureHuntPlayer.h";
+#include "Menu.h";
 #include <stdlib.h>
+#include"TreasureHuntMap.h";
 
 using namespace std;
 //Set of strings that introduce story, character, and game title
@@ -242,6 +243,9 @@ void menu::beginGame()
 	
 	while (traveler.getPlayerLocation() != "TREASURE")
 	{
+		Map.updatePosition();
+		Map.displayMap();
+		
 		showRoutes();
 		cout << endl;
 		traveler.makeChoice();
