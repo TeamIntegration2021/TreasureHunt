@@ -236,6 +236,8 @@ void menu::beginGame()
 {
 	// cout << boarScenario << endl;
 	//cin>>directions
+	Map.updatePosition();
+	Map.displayMap();
 	traveler.setPlayerLocation("BEACH");
 	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
 	cout << endl;
