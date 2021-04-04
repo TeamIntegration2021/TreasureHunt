@@ -1,6 +1,9 @@
 //unfinished map 
 #include<string>;
 #include"TreasureHuntMap.h";
+#include"TreasureHuntPlayer.h";
+#include"Menu.h";
+
 
 using namespace std;
 //test
@@ -13,7 +16,7 @@ string mapH6 = " | ";
 string mapH7 = " | ";
 string mapH8 = " | ";
 string mapH9 = " S ";
-string mapH10 = "                                                        <quest 1>                                               ";
+string mapH10 = "                                                        <quest 1>(P)                                              ";
 string mapBoar = "                                                          Boar                                                  ";
 string mapH11 = "                                                       /         \\                                              ";
 string mapH12 = "                                                      /           \\                                             ";
@@ -31,6 +34,7 @@ string mapH23 = "                                   ~~~~~  <river>   <quest 2>  
 string mapH24 = "                                  ~~~~     ~~~~~~    |                                                  /       ";
 string mapH25 = "                                                     |                                                 /        ";
 string mapH26 = "                                                     |_____________                                   /         ";
+<<<<<<< HEAD
 string mapH27 = "                                                                   \\                                 /          ";
 string mapH28 = "                                                                    \\                               /           ";
 string mapH29 = "                                                                     \\                             /            ";
@@ -38,13 +42,27 @@ string mapH30 = "                                                               
 string mapH31 = "                                                                       \\                         /              ";
 string mapH32 = "                                                                        \\                       /               ";
 string mapH33 = "                                                                         \\______  <quest 3> ___/                ";
+=======
+string mapH27 = "                                                                   \                                 /          ";
+string mapH28 = "                                                                    \                               /           ";
+string mapH29 = "                                                                     \                             /            ";
+string mapH30 = "                                                                      \                           /             ";
+string mapH31 = "                                                                       \                         /              ";
+string mapH32 = "                                                                        \         <pirates>     /               ";
+string mapH33 = "                                                                         \______  <quest 3> ___/                ";
+>>>>>>> 5050d178fca386893e01e9cfe2d9e55845131479
 string mapH34 = "                                                                                      |                         ";
 string mapH35 = "                                                                                      |                         ";
 string mapH36 = "                                                                                      |                         ";
 string mapH37 = "                                                                                     /                          ";
 string mapH38 = "                                                                                    /                           ";
+<<<<<<< HEAD
 string mapH39 = "                                                                /\\/\\/\\/\\/\\ ________/                            ";
 string mapH40 = "                                                    Pirates    |<treasure>|                                    ";
+=======
+string mapH39 = "                                                                /\/\/\/\/\ ________/                            ";
+string mapH40 = "                                                               |<treasure>|                                    ";
+>>>>>>> 5050d178fca386893e01e9cfe2d9e55845131479
 string mapH41 = "                                                               |__________|                                    ";
 string mapH42 = "                                                                                                                ";
 string mapH43 = "                                                                                                                ";
@@ -117,7 +135,41 @@ void TreasureHuntMap::displayMap() {
 
 void TreasureHuntMap::updatePosition() {
 
+	switch (traveler.playerSpot) {
+		case 1:
+			break;
+		case 2:
+			mapH10 = "                                                        <quest 1> (P)                                              ";
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		case 7:
+			 mapH23 = "                                   ~~~~~  <river>   <quest 2>(P)  /\/\/\/\/\/\/\                                  ";
+			break;
+		case 8:
+			break;
+		case 9:
+			 mapH33 = "                                                                         (P)\______  <quest 3> ___/                ";
+			 break;
+		case 10:
+			break;
+		case 11:
+			break;
+		case 12:
+			 mapH39 = "                                                                /\/\/\/\/\ (P)                           ";
+			 mapH40 = "                                                               |<treasure>|                                    ";
+			 mapH41 = "                                                               |__________|                                    ";
 
+
+
+
+	}
 
 
 

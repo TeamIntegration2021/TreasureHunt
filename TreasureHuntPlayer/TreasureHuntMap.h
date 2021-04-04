@@ -18,8 +18,15 @@ namespace std
 
 		
 	public: 
+<<<<<<< HEAD
 		void displayMap();
 		void updatePosition();
+=======
+		//void displayMap();
+		//void updatePosition();
+
+		
+>>>>>>> 5050d178fca386893e01e9cfe2d9e55845131479
 
 
 	};

@@ -15,6 +15,8 @@ int main()
 	travelerMenu.askName();
 	travelerMenu.displayIconLegend();
 	travelerMenu.beginGame();
+
+
 	
 	
 	
