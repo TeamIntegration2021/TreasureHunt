@@ -455,6 +455,8 @@ void menu::showRoutes()
 
 	void menu::DisplayInventory()
 	{
+
+
 		cout << "------------------------" << endl;
 		cout << "|      INVENTORY       |" << endl;
 		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
