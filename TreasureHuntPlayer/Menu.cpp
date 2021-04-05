@@ -61,7 +61,6 @@ string title =        "|  INTA: THE JUNGLE  |";
 
 string boarScenario = " "; //add text for boar scenario, create switches for choices
 TreasureHuntPlayer traveler;
-
 TreasureHuntMap Map;
 
 /**
@@ -238,7 +237,7 @@ void menu::beginGame()
 	//cin>>directions
 	Map.updatePosition();
 	Map.displayMap();
-	traveler.setPlayerLocation("BEACH");
+	traveler.setPlayerLocation(1);
 	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
 	cout << endl;
 	cout << endl;
@@ -259,32 +258,33 @@ void menu::beginGame()
 			break;
 		case 2: //forest
 		{
-			while (traveler.getPlayerLocation() != "BEACH")
+			while (traveler.previousSpot != 1 )
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
 				traveler.makeChoice();
 			}
-			traveler.setPlayerLocation("FOREST");
+			traveler.setPlayerLocation(2);
 			cout << quest1scroll << endl;
 			break;
 
 		}
 		case 3: //feed boar
 		{
-			while (traveler.getPlayerLocation() != "FOREST")
+			while (traveler.previousSpot !=1)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
 				traveler.makeChoice();
 			}
 			cout << feedBoar << endl;
+			//cout line indicating 
 
 			break;
 		}
 		case 4: //fight boar
 		{
-			while (traveler.getPlayerLocation() != "FOREST")
+			while (traveler.previousSpot != 2)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -296,7 +296,7 @@ void menu::beginGame()
 		}
 		case 5: //dirtpath
 		{
-			while (traveler.getPlayerLocation() != "FOREST")
+			while (traveler.previousSpot != 2)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -307,7 +307,7 @@ void menu::beginGame()
 		}
 		case 6: //vines
 		{
-			while (traveler.getPlayerLocation() != "FOREST")
+			while (traveler.previousSpot != 2)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -318,7 +318,7 @@ void menu::beginGame()
 
 		case 7: //mountain
 		{
-			while (traveler.getPlayerLocation() != "FOREST" || traveler.getPlayerLocation() != "VINES")
+			while (traveler.previousSpot != 2 && traveler.previousSpot != 6)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -329,7 +329,7 @@ void menu::beginGame()
 		}
 		case 8: //river
 		{
-			if (traveler.getPlayerLocation() != "MOUNTAIN")
+			if (traveler.previousSpot != 7)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -339,7 +339,7 @@ void menu::beginGame()
 		}
 		case 9: // pirate camp
 		{
-			while (traveler.getPlayerLocation() != "MOUNTAIN")
+			while (traveler.previousSpot != 7)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -349,7 +349,7 @@ void menu::beginGame()
 		}
 		case 10: //distract
 		{
-			while (traveler.getPlayerLocation() != "PIRATE CAMP")
+			while (traveler.previousSpot != 9)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -359,7 +359,7 @@ void menu::beginGame()
 		}
 		case 11: //wait
 		{
-			while (traveler.getPlayerLocation() != "PIRATE CAMP")
+			while (traveler.previousSpot != 9)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -369,7 +369,7 @@ void menu::beginGame()
 		}
 		case 12: //treasure
 		{
-			while (traveler.getPlayerLocation() != "PIRATE CAMP")
+			while (traveler.previousSpot != 9)
 			{
 				cout << "Im sorry! you cannot make that move. Try again" << endl;
 				showRoutes();
@@ -451,5 +451,16 @@ void menu::showRoutes()
 		break;
 		//please enter a valid direction
 
+	}
+
+	void menu::DisplayInventory()
+	{
+		cout << "------------------------" << endl;
+		cout << "|      INVENTORY       |" << endl;
+		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+		cout << "------------------------" << endl;
 	}
 }

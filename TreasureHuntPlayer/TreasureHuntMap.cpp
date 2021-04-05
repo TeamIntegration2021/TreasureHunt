@@ -32,19 +32,19 @@ string mapH23 = "                                   ~~~~~  <river>   <quest 2>  
 string mapH24 = "                                  ~~~~     ~~~~~~    |                                                  /       ";
 string mapH25 = "                                                     |                                                 /        ";
 string mapH26 = "                                                     |_____________                                   /         ";
-string mapH27 = "                                                                   \                                 /          ";
-string mapH28 = "                                                                    \                               /           ";
-string mapH29 = "                                                                     \                             /            ";
-string mapH30 = "                                                                      \                           /             ";
-string mapH31 = "                                                                       \                         /              ";
-string mapH32 = "                                                                        \                       /               ";
-string mapH33 = "                                                                         \______  <quest 3> ___/                ";
+string mapH27 = "                                                                   \\                                 /          ";
+string mapH28 = "                                                                    \\                               /           ";
+string mapH29 = "                                                                     \\                             /            ";
+string mapH30 = "                                                                      \\                           /             ";
+string mapH31 = "                                                                       \\                         /              ";
+string mapH32 = "                                                                        \\                       /               ";
+string mapH33 = "                                                                         \\______  <quest 3> ___/                ";
 string mapH34 = "                                                                                      |                         ";
 string mapH35 = "                                                                                      |                         ";
 string mapH36 = "                                                                                      |                         ";
 string mapH37 = "                                                                                     /                          ";
 string mapH38 = "                                                                                    /                           ";
-string mapH39 = "                                                                /\/\/\/\/\ ________/                            ";
+string mapH39 = "                                                                /\\\/\\/\\/\\/\\ ________/                            ";
 string mapH40 = "                                                    Pirates    |<treasure>|                                    ";
 string mapH41 = "                                                               |__________|                                    ";
 string mapH42 = "                                                                                                                ";
@@ -117,8 +117,8 @@ void TreasureHuntMap::displayMap() {
 }
 
 void TreasureHuntMap::updatePosition() {
-
-	switch (traveler.playerSpot) {
+	int i = 10;
+	switch (i) {
 		case 1:
 			break;
 		case 2:
@@ -133,7 +133,7 @@ void TreasureHuntMap::updatePosition() {
 		case 6:
 			break;
 		case 7:
-			 mapH23 = "                                   ~~~~~  <river>   <quest 2>(P)  /\/\/\/\/\/\/\                                  ";
+			 mapH23 = "                                   ~~~~~  <river>   <quest 2>(P)  /\\/\\/\\/\\/\\/\\/\\                                  ";
 			break;
 		case 8:
 			break;
@@ -145,7 +145,7 @@ void TreasureHuntMap::updatePosition() {
 		case 11:
 			break;
 		case 12:
-			 mapH39 = "                                                                /\/\/\/\/\ (P)                           ";
+			 mapH39 = "                                                                /\\/\\/\\/\\/\\ (P)                           ";
 			 mapH40 = "                                                               |<treasure>|                                    ";
 			 mapH41 = "                                                               |__________|                                    ";
 

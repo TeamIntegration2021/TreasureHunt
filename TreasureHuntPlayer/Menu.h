@@ -19,7 +19,11 @@ public:
 	void askName();
 	void beginGame();
 	void DisplayGameName();
+	void DisplayInventory();
 	void showRoutes();
+	string inventoryItem[4] = {"Flares", "Shovel", "hour supply of food and water", "Keys"};
+	int inventoryAmount[4] = {2,1,24,0};
+	
 
 	
 
