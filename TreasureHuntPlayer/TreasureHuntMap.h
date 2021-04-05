@@ -18,8 +18,8 @@
 
 		
 	public: 
-		//void displayMap();
-		//void updatePosition();
+		void displayMap();
+		void updatePosition();
 
 		
 
