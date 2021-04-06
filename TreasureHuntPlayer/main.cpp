@@ -2,7 +2,7 @@
 #include <string>
 #include <iomanip>
 #include "TreasureHuntPlayer.h"
-#include "Menu.h"
+
 
 
 using namespace std;
@@ -14,6 +14,8 @@ int main()
 	travelerMenu.DisplayMenu();
 	travelerMenu.askName();
 	travelerMenu.displayIconLegend();
+	cout << endl;
+	travelerMenu.displayInventory();
 	travelerMenu.beginGame();
 
 

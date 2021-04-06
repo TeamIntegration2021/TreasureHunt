@@ -2,6 +2,7 @@
 #include<iostream>
 #include <iomanip>
 #include <string>
+#include "Menu.h"
 
 #ifndef TreasureHuntPlayer_h
 #define TreasureHuntPlayer_h
@@ -17,6 +18,7 @@ namespace std
 
 		// declares and initilaizes variables to hold the player's name, location and choice of movement
 	public:
+		bool isValid(int);
 		enum locations
 		{
 			QUIT = 0, BEACH = 1, FOREST = 2, FEED = 3, FIGHT = 4, DIRTPATH = 5, GORGE = 6, MOUNTAIN = 7, RIVER = 8, PIRATECAMP = 9, DISTRACT = 10, WAIT = 11, TREASURE = 12
@@ -24,6 +26,7 @@ namespace std
 		void setPlayerName(string);
 		void setPlayerLocation(int);
 		void makeChoice();
+		void showRoutes();
 		string getPlayerName() const;
 		string getPlayerLocation() const;
 		string makeMove = "MAKE YOUR MOVE:";
@@ -32,6 +35,7 @@ namespace std
 		int playerChoice = 1;
 		locations playerSpot = BEACH;
 		locations previousSpot = BEACH;
+		
 
 		//test line
 		
