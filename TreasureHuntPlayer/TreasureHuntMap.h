@@ -18,10 +18,8 @@
 
 		
 	public: 
-		void displayMap();
-		void updatePosition();
-
-		
+		//void std::TreasureHuntMap::displayMap();
+		//void std::TreasureHuntMap::updatePosition();
 
 
 	};

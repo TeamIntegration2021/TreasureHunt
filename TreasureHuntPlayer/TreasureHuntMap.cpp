@@ -44,11 +44,7 @@ string mapH35 = "                                                               
 string mapH36 = "                                                                                      |                         ";
 string mapH37 = "                                                                                     /                          ";
 string mapH38 = "                                                                                    /                           ";
-<<<<<<< HEAD
-string mapH39 = "                                                                /\\\/\\/\\/\\/\\ ________/                            ";
-=======
-string mapH39 = "                                                                /\\/\\/\\/\\/\\ ________/                            ";
->>>>>>> 57b873910c630f072ccfe3841b74f5cff6a2b240
+string mapH39 = "                                                                /\/\/\/\/\ ________/                            ";
 string mapH40 = "                                                    Pirates    |<treasure>|                                    ";
 string mapH41 = "                                                               |__________|                                    ";
 string mapH42 = "                                                                                                                ";
