@@ -6,7 +6,7 @@
 #ifndef TreasureHuntMap_h
 #define TreasureHuntMap_h
 
-//namespace std
+namespace std
 {
 	
 
@@ -18,8 +18,8 @@
 
 		
 	public: 
-		//void std::TreasureHuntMap::displayMap();
-		//void std::TreasureHuntMap::updatePosition();
+		void displayMap();
+		void updatePosition();
 
 
 	};

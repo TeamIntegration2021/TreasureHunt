@@ -230,6 +230,16 @@ void menu::askName() {
 	
 
 }
+void menu::displayInventory()
+{
+	cout << "------------------------" << endl;
+	cout << "|      INVENTORY       |" << endl;
+	cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+	cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+	cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+	cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
+	cout << "------------------------" << endl;
+}
 
 void menu::beginGame()
 {
@@ -453,14 +463,5 @@ void menu::showRoutes()
 
 	}
 
-	void menu::DisplayInventory()
-	{
-		cout << "------------------------" << endl;
-		cout << "|      INVENTORY       |" << endl;
-		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
-		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
-		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
-		cout << "|" << inventoryAmount[0] << " " << inventoryItem[0] << "  |" << endl;
-		cout << "------------------------" << endl;
-	}
+	
 }

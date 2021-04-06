@@ -138,7 +138,7 @@ void TreasureHuntMap::updatePosition() {
 		case 8:
 			break;
 		case 9:
-			 mapH33 = "                                                                         (P)\______  <quest 3> ___/                ";
+			 mapH33 = "                                                                         (P)\\______  <quest 3> ___/                ";
 			 break;
 		case 10:
 			break;
