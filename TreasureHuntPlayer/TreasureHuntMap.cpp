@@ -14,12 +14,12 @@ string mapH6 = "        | ";
 string mapH7 = "        | ";
 string mapH8 = "        | ";
 string mapH9 = "        S ";
-string beach;
-
-
-
-
-
+string beach1 ="                                                           start                                              ";
+string beach2="                                                          <beach>                                                ";
+string beach3="                                                             |                                                  ";
+string beach4="                                                             |                                                  ";
+string beach5="                                                             |                                                  ";
+string beach6="                                                             |                                                  ";
 string mapH10 = "                                                        <quest 1>(P)                                            ";
 string mapBoar = "                                                          Boar                                                 ";
 string mapH11 = "                                                       /          \\                                            ";
@@ -78,6 +78,12 @@ void TreasureHuntMap::displayMap() {
 	cout << mapH7 << endl;
 	cout << mapH8 << endl;
 	cout << mapH9 << endl;
+	cout << beach1 << endl;
+	cout << beach2 << endl;
+	cout << beach3 << endl;
+	cout << beach4 << endl;
+	cout << beach5 << endl;
+	cout << beach6 << endl;
 	cout << mapH10 << endl;
 	cout << mapBoar <<endl;
 	cout << mapH11 << endl;

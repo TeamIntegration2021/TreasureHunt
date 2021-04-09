@@ -9,15 +9,15 @@
 
 int main()
 {
-	//menu travelerMenu;
+	menu travelerMenu;
 	//travelerMenu.DisplayGameName();
 	//travelerMenu.DisplayMenu();
-	//travelerMenu.askName();
+	travelerMenu.askName();
 	//travelerMenu.displayIconLegend();
-	//cout << endl;
+	cout << endl;
 	//travelerMenu.displayInventory();
-	//travelerMenu.beginGame();
-    displayCountDown();
+	travelerMenu.beginGame();
+    //displayCountDown();
    
 
 
