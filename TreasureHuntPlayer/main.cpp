@@ -2,21 +2,27 @@
 #include <string>
 #include <iomanip>
 #include "TreasureHuntPlayer.h"
+#include <chrono>
+#include <stdlib.h>
+#include<Windows.h>
 
-
-
-using namespace std;
 
 int main()
 {
-	menu travelerMenu;
-	travelerMenu.DisplayGameName();
-	travelerMenu.DisplayMenu();
-	travelerMenu.askName();
-	travelerMenu.displayIconLegend();
-	cout << endl;
-	travelerMenu.displayInventory();
-	travelerMenu.beginGame();
+	//menu travelerMenu;
+	//travelerMenu.DisplayGameName();
+	//travelerMenu.DisplayMenu();
+	//travelerMenu.askName();
+	//travelerMenu.displayIconLegend();
+	//cout << endl;
+	//travelerMenu.displayInventory();
+	//travelerMenu.beginGame();
+    displayCountDown();
+   
+
+
+
+
 
 
 	
@@ -25,3 +31,4 @@ int main()
 	
 	return 0;
 }
+

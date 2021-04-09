@@ -5,48 +5,54 @@
 #include"Menu.h";
 
 //test
-string mapH1 = " N ";
-string mapH2 = " | ";
-string mapH3 = " | ";
-string mapH4 = " | ";
+string mapH1 = "        N ";
+string mapH2 = "        | ";
+string mapH3 = "        | ";
+string mapH4 = "        | ";
 string mapH5 = " <W-----o-----E> ";
-string mapH6 = " | ";
-string mapH7 = " | ";
-string mapH8 = " | ";
-string mapH9 = " S ";
-string mapH10 = "                                                        <quest 1>(P)                                              ";
-string mapBoar = "                                                          Boar                                                  ";
-string mapH11 = "                                                       /         \\                                              ";
-string mapH12 = "                                                      /           \\                                             ";
-string mapH13 = "                                                     /             \\                                            ";
-string mapH14 = " 				                    ________________/                \\                                           ";
-string mapH15 = "				                   |                                  / ------------------------- <dirtpath>     ";
-string mapH16 = "                                  |                            <vines>                                    |     ";
-string mapH17 = "			                       |                               /                                       |     ";
-string mapH18 = "			                       |                              /                                        |     ";
-string mapH19 = "                                  |                             /                                         |     ";
-string mapH20 = "                                  |                            /                                          |     ";
-string mapH21 = "                                  |                           /                                           |     ";
-string mapH22 = "                                  |                          /                                            |     ";
-string mapH23 = "                                   ~~~~~  <river>   <quest 2>  /\\/\\/\\/\\/\\/\\/\\                             |     ";
+string mapH6 = "        | ";
+string mapH7 = "        | ";
+string mapH8 = "        | ";
+string mapH9 = "        S ";
+string beach;
+
+
+
+
+
+string mapH10 = "                                                        <quest 1>(P)                                            ";
+string mapBoar = "                                                          Boar                                                 ";
+string mapH11 = "                                                       /          \\                                            ";
+string mapH12 = "                                                      /            \\                                           ";
+string mapH13 = "                                                     /              \\                                          ";
+string mapH14 = " 				    ________________/                 \ \                                        ";
+string mapH15 = "				  |                                / ------------------------- <dirtpath>     ";
+string mapH16 = "                                  |                            <vines>                                   |     ";
+string mapH17 = "			          |                              /                                       |     ";
+string mapH18 = "			          |                             /                                        |     ";
+string mapH19 = "                                  |                            /                                         |     ";
+string mapH20 = "                                  |                           /                                          |     ";
+string mapH21 = "                                  |                          /                                           |     ";
+string mapH22 = "                                  |                         /                                            |     ";
+string mapH23 = "                                   ~~~~~  <river>   <quest 2>  /\\/\\/\\/\\/\\/\\/\\                            |     ";
 string mapH24 = "                                  ~~~~     ~~~~~~    |                                                  /       ";
 string mapH25 = "                                                     |                                                 /        ";
 string mapH26 = "                                                     |_____________                                   /         ";
-string mapH27 = "                                                                   \\                                 /          ";
-string mapH28 = "                                                                    \\                               /           ";
-string mapH29 = "                                                                     \\                             /            ";
-string mapH30 = "                                                                      \\                           /             ";
-string mapH31 = "                                                                       \\                         /              ";
-string mapH32 = "                                                                        \\                       /               ";
-string mapH33 = "                                                                         \\______  <quest 3> ___/                ";
+string mapH27 = "                                                                   \\                                 /         ";
+string mapH28 = "                                                                    \\                               /          ";
+string mapH29 = "                                                                     \\                             /           ";
+string mapH30 = "                                                                      \\                           /            ";
+string mapH31 = "                                                                       \\                         /             ";
+string mapH32 = "                                                                        \\          Pirates      /              ";
+string mapH33 = "                                                                         \\______  <quest 3> ___/               ";
 string mapH34 = "                                                                                      |                         ";
 string mapH35 = "                                                                                      |                         ";
 string mapH36 = "                                                                                      |                         ";
 string mapH37 = "                                                                                     /                          ";
 string mapH38 = "                                                                                    /                           ";
-string mapH39 = "                                                                /\/\/\/\/\ ________/                            ";
-string mapH40 = "                                                    Pirates    |<treasure>|                                    ";
-string mapH41 = "                                                               |__________|                                    ";
+string mapH39 = "                                                                /\\/\\/\\/\\/\\ ________/                       ";
+string mapH40 = "                                                               |<treasure>|                                            ";
+string mapH41 = "                                                               |__________|                                            ";
 string mapH42 = "                                                                                                                ";
 string mapH43 = "                                                                                                                ";
 string mapH44 = "                                                                                                                ";
@@ -73,7 +79,7 @@ void TreasureHuntMap::displayMap() {
 	cout << mapH8 << endl;
 	cout << mapH9 << endl;
 	cout << mapH10 << endl;
-	cout << mapBoar << endl;
+	cout << mapBoar <<endl;
 	cout << mapH11 << endl;
 	cout << mapH12 << endl;
 	cout << mapH13 << endl;
