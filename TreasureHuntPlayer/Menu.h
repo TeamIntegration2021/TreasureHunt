@@ -1,6 +1,5 @@
 #include<iostream>
 #include <iomanip>
-#include "TreasureHuntPlayer.h"
 #include "TreasureHuntMap.h"
 using namespace std;
 
@@ -19,7 +18,10 @@ public:
 	void askName();
 	void beginGame();
 	void DisplayGameName();
-	void showRoutes();
+	void displayInventory();
+	string inventoryItem[4] = {"Flares", "Shovel", "hour supply of food and water", "Keys"};
+	int inventoryAmount[4] = {2,1,24,0};
+	
 
 	
 

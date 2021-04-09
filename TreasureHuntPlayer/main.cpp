@@ -2,7 +2,7 @@
 #include <string>
 #include <iomanip>
 #include "TreasureHuntPlayer.h"
-#include "Menu.h"
+
 
 
 using namespace std;
@@ -10,10 +10,12 @@ using namespace std;
 int main()
 {
 	menu travelerMenu;
-	//travelerMenu.DisplayGameName();
-	//travelerMenu.DisplayMenu();
+	travelerMenu.DisplayGameName();
+	travelerMenu.DisplayMenu();
 	travelerMenu.askName();
 	travelerMenu.displayIconLegend();
+	cout << endl;
+	travelerMenu.displayInventory();
 	travelerMenu.beginGame();
 
 
