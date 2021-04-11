@@ -288,6 +288,9 @@ void menu::move()
 				traveler.visitForest = true;
 				traveler.setPlayerLocation(2);
 				cout << quest1scroll << endl;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
 				Map.updatePosition(2);
 				Map.displayMap();
 				cout << endl;
@@ -310,8 +313,11 @@ void menu::move()
 				cout << endl;
 				cout << key1retrieved << endl;
 				cout << endl;
-				inventoryItem[3] += 1;
+				inventoryAmount[3] ++ ;
 				_sleep(700);
+				cout << "IN THE PROCESS, YOU SACRIFICED 2 HOURS WORTH OF FOOD" << endl;
+				inventoryAmount[2] -= 2;
+				_sleep(1200);
 				cout << "YOU CONTINUE ALONG THE TRAIL THAT LEADS TO THE GREAT INTA DIVIDES" << endl;
 				_sleep(2000);
 				traveler.setPlayerLocation(7);
@@ -344,6 +350,9 @@ void menu::move()
 				}
 				cout << "YOU ARE CHASED ALONG THE DIRTPATH!" << endl;
 				_sleep(1500);
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
 				Map.updatePosition(5);
 				Map.displayMap();
 				_sleep(1500);
@@ -367,6 +376,8 @@ void menu::move()
 				traveler.swungOnVines = true;
 				cout << "YOU SWING ON THE VINES ACROSS THE GORGE INTO SAFETY" << endl;
 				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
 				Map.updatePosition(6);
 				Map.displayMap();
 				_sleep(1500);
@@ -385,6 +396,9 @@ void menu::move()
 					traveler.makeChoice();
 				}
 				traveler.visitNorthMountain = true;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
 				Map.updatePosition(7);
 				Map.displayMap();
 				_sleep(1500);
@@ -405,6 +419,8 @@ void menu::move()
 				traveler.visitRiver = true;
 				cout << "SWIMMING THROUGH RIVER....." << endl;
 				_sleep(1000);
+				displayIconLegend();
+				displayInventory();
 				Map.updatePosition(7);
 				Map.displayMap();
 				_sleep(1500);
@@ -420,6 +436,9 @@ void menu::move()
 					traveler.makeChoice();
 				}
 				traveler.visitPirateCamp = true;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
 				Map.updatePosition(9);
 				Map.displayMap();
 				_sleep(1500);
@@ -430,7 +449,7 @@ void menu::move()
 			}
 			case 10: //distract
 			{
-				while (traveler.previousSpot != 9)
+				while (traveler.visitPirateCamp != true)
 				{
 					cout << "Im sorry! you cannot make that move. Try again" << endl;
 					traveler.showRoutes();
@@ -448,6 +467,9 @@ void menu::move()
 				cout << key3retrieved << endl;
 				inventoryAmount[3] += 1;
 				cout << endl;
+				cout << "HEADING SOUTH TOWARDS THE TREASURE..." << endl;
+				_sleep(1200);
+				traveler.setPlayerLocation(12);
 				break;
 			}
 			case 11: //wait
@@ -475,6 +497,8 @@ void menu::move()
 					traveler.showRoutes();
 					traveler.makeChoice();
 				}
+				cout << "CONGRATULATIONS ON MAKING IT THIS FAR! IF YOU HAVE ALL THE REQUIRED KEYS THEN PROCEED TO OPEN THE CHEST" << endl;
+				_sleep(1200);
 				traveler.showRoutes();
 				traveler.makeChoice();
 				break;
@@ -488,30 +512,39 @@ void menu::move()
 					traveler.makeChoice();
 				}
 				traveler.visitSouthMountain = true;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(13);
+				Map.displayMap();
+				_sleep(1500);
 				cout << key2retrieved << endl;
-				inventoryItem[3] += 1;
+				inventoryAmount[3]++;
 				cout << "CONTINUING SOUTH" << endl;
 				traveler.setPlayerLocation(9);
 			}
 			case 14://open chest
 			{
-				while (traveler.visitTreasure = true && inventoryAmount[3]==3)
+				while (traveler.visitTreasure != true && inventoryAmount[3] !=3)
 				{
-					cout << "USING KEY 1..." << endl;
-					cout << endl;
-					_sleep(1000);
-					cout << "USING KEY 2..." << endl;
-					cout << endl;
-					_sleep(1000);
-					cout << "USING KEY 3..." << endl;
-					cout << endl;
-					_sleep(1000);
-					cout << "CHEST UNLOCKED" << endl;
-					cout << endl;
-					_sleep(1000);
-					cout << "CONGRATULATIONS! THE GREAT TREASURES OF INTA ARE YOURS FOR THE TAKING! YOU HAVE PROVED MOST WORTHY OF QUESTS OF LOS GOBERNATES" << endl;
-					_sleep(1000);
+					cout << "YOU DO NOT HAVE THE REUIRED MATERIALS TTHEREFORE YOU ARE NOT WORTH OF THE GREAT INTA PRIZE. YOU ARE COMMENDED FOR YOU DETERMINATION IN THIS QUEST BUT YOU HAVE FAILED" << endl; 
+					_sleep(1200);
+					exit(0);
 				}
+				cout << "USING KEY 1..." << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "USING KEY 2..." << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "USING KEY 3..." << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "CHEST UNLOCKED" << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "CONGRATULATIONS! THE GREAT TREASURES OF INTA ARE YOURS FOR THE TAKING! YOU HAVE PROVED MOST WORTHY OF QUESTS OF LOS GOBERNATES" << endl;
+				_sleep(1000);
 			}
 			default:
 				break;
