@@ -530,7 +530,7 @@ void menu::move()
 					cout << "YOU DO NOT HAVE THE REUIRED MATERIALS TTHEREFORE YOU ARE NOT WORTH OF THE GREAT INTA PRIZE. YOU ARE COMMENDED FOR YOU DETERMINATION IN THIS QUEST BUT YOU HAVE FAILED" << endl; 
 					_sleep(1200);
 					exit(0);
-				}
+				} 
 				cout << "USING KEY 1..." << endl;
 				cout << endl;
 				_sleep(1000);
