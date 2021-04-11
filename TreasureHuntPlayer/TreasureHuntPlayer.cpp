@@ -39,7 +39,7 @@ void TreasureHuntPlayer::showRoutes()
 		break;
 	case 7: //mountain
 	{
-		cout << "7 - TREK THROUGH MOUNTAINS" << endl;
+		cout << "13 - TREK THROUGH MOUNTAINS" << endl;
 		cout << "8 - SWIM ACROSS RIVER" << endl;
 	}
 	case 8: //river
@@ -54,6 +54,7 @@ void TreasureHuntPlayer::showRoutes()
 	case 11: //wait
 		break;
 	case 12: //treasure
+		cout << "14 - OPEN CHEST" << endl;
 		break;
 	default:
 		break;
@@ -70,6 +71,7 @@ void TreasureHuntPlayer::setPlayerName(string name)
 void TreasureHuntPlayer::setPlayerLocation(int location)
 {
 	playerSpot = static_cast<locations>(location);
+	
 }
 
 
@@ -109,17 +111,11 @@ string TreasureHuntPlayer::getPlayerLocation() const
 		return "Beach";
 	}
 	case 2: //forest
-	{
-		cout << "3 - FEED AND DISTRACT(WEST)" << endl;
-		cout << "4 - ATTACK(EAST)" << endl;
-	}
+		break;
 	case 3: //feed boar
 		break;
 	case 4: //fight boar
-	{
-		cout << "5 - RUN DOWN DIRTPATH(SOUTH)" << endl;
-		cout << "6 - SWING ACROSS GORGE(SW)" << endl;
-	}
+		break;
 	case 5: //dirtpath
 	{
 		break;
@@ -129,19 +125,13 @@ string TreasureHuntPlayer::getPlayerLocation() const
 		break;
 	}
 	case 7: //mountain
-	{
-		cout << "7 - TREK THROUGH MOUNTAINS" << endl;
-		cout << "8 - SWIM ACROSS RIVER" << endl;
-	}
+		break;
 	case 8: //river
 	{
 		break;
 	}
 	case 9: // pirate camp
-	{
-		cout << "10 - DISTRACT" << endl;
-		cout << "11 - WAIT" << endl;
-	}
+		break;
 	case 10: //distract
 	{
 		break;
@@ -164,7 +154,7 @@ string TreasureHuntPlayer::getPlayerLocation() const
 
 bool TreasureHuntPlayer::isValid(int selection)
 {
-	if (selection != 0 && selection != 1 && selection != 2 && selection != 3 && selection != 4 && selection != 5 && selection != 6 && selection != 7 && selection != 8 && selection != 9 && selection != 10 && selection != 11 && selection != 12)
+	if (selection != 0 && selection != 1 && selection != 2 && selection != 3 && selection != 4 && selection != 5 && selection != 6 && selection != 7 && selection != 8 && selection != 9 && selection != 10 && selection != 11 && selection != 12 && selection !=13 && selection !=14)
 	{
 		return false;
 	}
