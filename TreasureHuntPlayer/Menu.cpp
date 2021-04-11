@@ -37,6 +37,7 @@ string key3retrieved = "KEY 3 RETRIEVED";
 string mapIconDirtpath = "[===]";
 string mapIconForest = "[/|\\]";
 string mapIconGorge = "[\\_/]";
+string mapIconMountain = "[/\\/\\/\\]";
 string mapIconPirateCamp = "[->x]";
 string mapIconRiver = "(~~~)";
 string mapIconTreasure1 = "|\\/\\/\\/\\/|";
@@ -47,7 +48,7 @@ string mapIconTreasure3 = "|________|";
 string pName;
 
 string quest1scroll = "You have reached the home where the beast lay his head. He may just be hungry, or just agitated to see you, but alas you must maneuver wisely to retrieve the key from the beast's den ";
-string quest2scroll = "You have reached the great divides of Inta Island. Quickly choose as time is of the essence. You can either traverse through the waters or trek across the great divides ";
+string quest2scroll = "You have reached the great divides of Inta Island. Quickly choose as time is of the essence. You can either traverse through the waters or trek across the great divides to reach the southern end of the divides ";
 string quest3scroll = "You have made it to the final and most challenging quest. Many bandits from far and wide have come to the island to capture the treasure but to no avail. Just ahead you is a camp of bandits guarding the 3rd key in a tent. Your wits and resources are your best guide during this challenge";
 
 
@@ -197,6 +198,7 @@ void menu::displayIconLegend()
 {
 	cout << "MAP LEGEND" << endl;
 	cout << "___________________________" << endl;
+	cout << "You : (P)" << endl;
 	cout << "Dirt trail: " << mapIconDirtpath << endl;
 	cout << "Forest: " << mapIconForest << endl;
 	cout << "Gorge: " << mapIconGorge << endl;
@@ -205,18 +207,20 @@ void menu::displayIconLegend()
 	cout << "          " << mapIconTreasure1 << endl;
 	cout << "Treasure: " << mapIconTreasure2 << endl;
 	cout << "          " << mapIconTreasure3 << endl;
+	_sleep(1000);
 
 }
 
 void menu::askName() {
 	cout << askForName;
 	cin >> pName;
-	 /**if (cin.fail()) // if name is not of type string prompt user again.
+	 if (cin.fail())
 	{
 		cout << "Enter a valid name" << endl;
-		cin > pName;
+		cin >> pName;
 	}
-	else **/
+	 _sleep(1500);
+	
 	
 
 
@@ -250,169 +254,305 @@ void menu::beginGame()
 {
 	// cout << boarScenario << endl;
 	//cin>>directions
-
-	traveler.setPlayerLocation(1);
-	cout << traveler.getPlayerName() << "! " << beachScroll << endl;
-	cout << endl;
-	cout << endl;
-	
-	while (traveler.getPlayerLocation() != "TREASURE")
+	Map.displayMap();
+	while (traveler.visitTreasure != true)
 	{
-		Map.updatePosition();
-		Map.displayMap();
-		
-		traveler.showRoutes();
-		cout << endl;
-		traveler.makeChoice();
-		switch (traveler.playerSpot) //add direct
-		{
-		case 1: //beach
-			cout << "Cant go north";
-			//take time off? punishment
-			break;
-		case 2: //forest
-		{
-			while (traveler.previousSpot != 1 )
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			traveler.setPlayerLocation(2);
-			cout << quest1scroll << endl;
-			break;
-
-		}
-		case 3: //feed boar
-		{
-			while (traveler.previousSpot !=1)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			cout << feedBoar << endl;
-			cout << endl;
-			cout << key1retrieved << endl;
-			inventoryItem[3]+=1;
-
-			break;
-		}
-		case 4: //fight boar
-		{
-			while (traveler.previousSpot != 2)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			cout << fightBoar << endl;
-			break;
-		}
-		case 5: //dirtpath
-		{
-			while (traveler.previousSpot != 2)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			traveler.playerChoice = 9;
-			break;
-		}
-		case 6: //vines
-		{
-			while (traveler.previousSpot != 2)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			break;
-		}
-
-		case 7: //mountain
-		{
-			while (traveler.previousSpot != 2 && traveler.previousSpot != 6)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			cout << quest2scroll;
-			cout << endl;
-			cout << key2retrieved << endl;
-			inventoryItem[3] += 1;
-
-			break;
-		}
-		case 8: //river
-		{
-			if (traveler.previousSpot != 7)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			break;
-		}
-		case 9: // pirate camp
-		{
-			while (traveler.previousSpot != 7)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			cout << quest3scroll;
-		}
-		case 10: //distract
-		{
-			while (traveler.previousSpot != 9)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			break;
-		}
-		case 11: //wait
-		{
-			while (traveler.previousSpot != 9)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			
-			cout << key2retrieved << endl;
-			inventoryItem[3] += 1;
-			break;
-		}
-		case 12: //treasure
-		{
-			while (traveler.previousSpot != 9)
-			{
-				cout << "Im sorry! you cannot make that move. Try again" << endl;
-				traveler.showRoutes();
-				traveler.makeChoice();
-			}
-			if (inventoryAmount[3] == 3)
-			{
-
-			}
-			break;
-		}
-		default:
-			break;
-			//please enter a valid direction
-
-		}
+		move();
 	}
 
 
 
 }
+void menu::move()
+{
+		
+		_sleep(1000);
+
+		
+			switch (traveler.playerSpot) //add direct
+			{
+			case 1: //beach
+
+				traveler.showRoutes();
+				cout << endl;
+				traveler.makeChoice();
+				break;
+			case 2: //forest
+			{
+				while (traveler.visitBeach != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.visitForest = true;
+				traveler.setPlayerLocation(2);
+				cout << quest1scroll << endl;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(2);
+				Map.displayMap();
+				cout << endl;
+				traveler.showRoutes();
+				traveler.makeChoice();
+				break;
+
+			}
+			case 3: //feed boar
+			{
+				while (traveler.visitForest != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.fedBoar = true;
+				traveler.setPlayerLocation(3);
+				cout << feedBoar << endl;
+				cout << endl;
+				cout << key1retrieved << endl;
+				cout << endl;
+				inventoryAmount[3] ++ ;
+				_sleep(700);
+				cout << "IN THE PROCESS, YOU SACRIFICED 2 HOURS WORTH OF FOOD" << endl;
+				inventoryAmount[2] -= 2;
+				_sleep(1200);
+				cout << "YOU CONTINUE ALONG THE TRAIL THAT LEADS TO THE GREAT INTA DIVIDES" << endl;
+				_sleep(2000);
+				traveler.setPlayerLocation(7);
+				break;
+
+			}
+			case 4: //fight boar
+			{
+				while (traveler.visitForest != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.foughtBoar = true;
+				traveler.setPlayerLocation(4);
+				cout << fightBoar << endl;
+				inventoryAmount[1]--;
+				traveler.showRoutes();
+				traveler.makeChoice();
+				break;
+			}
+			case 5: //dirtpath
+			{
+				while (traveler.foughtBoar != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				cout << "YOU ARE CHASED ALONG THE DIRTPATH!" << endl;
+				_sleep(1500);
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(5);
+				Map.displayMap();
+				_sleep(1500);
+				cout << "AFTER SOMETIME, YOU ARE ABLE TO LOSE THE BEAST AS HE FIXES HIS ON A PASSING BY RABBIT AND ENGAGES IN THAT HUNT! TURNS OUT HE WAS JUST HUNGRY AFTER ALL..." << endl;
+				cout << endl;
+				_sleep(1500);
+				cout << "YOU CONTINUE SOUTHWARDS ALONG THE PATH" << endl;
+				_sleep(1500);
+				traveler.setPlayerLocation(9);
+				
+				break;
+			}
+			case 6: //gorge
+			{
+				while (traveler.foughtBoar != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.swungOnVines = true;
+				cout << "YOU SWING ON THE VINES ACROSS THE GORGE INTO SAFETY" << endl;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(6);
+				Map.displayMap();
+				_sleep(1500);
+				cout << "YOU CONTINUE ALONG THE TRAIL THAT LEADS TO THE GREAT INTA DIVIDES" << endl;
+				_sleep(1500);
+				traveler.setPlayerLocation(7);
+				break;
+			}
+
+			case 7: //mountainside north
+			{
+				while (traveler.fedBoar != true && traveler.swungOnVines != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.visitNorthMountain = true;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(7);
+				Map.displayMap();
+				_sleep(1500);
+				cout << quest2scroll;
+				cout << endl;
+				traveler.showRoutes();
+				traveler.makeChoice();
+				break;
+			}
+			case 8: //river
+			{
+				if (traveler.visitNorthMountain != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.visitRiver = true;
+				cout << "SWIMMING THROUGH RIVER....." << endl;
+				_sleep(1000);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(7);
+				Map.displayMap();
+				_sleep(1500);
+				traveler.setPlayerLocation(13);
+				break;
+			}
+			case 9: // pirate camp
+			{
+				while (traveler.walkedDirtpath != true && traveler.visitSouthMountain != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.visitPirateCamp = true;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(9);
+				Map.displayMap();
+				_sleep(1500);
+				cout << quest3scroll << endl;
+				traveler.showRoutes();
+				traveler.makeChoice();
+				break;
+			}
+			case 10: //distract
+			{
+				while (traveler.visitPirateCamp != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.usedDistraction = true;
+				inventoryAmount[0]--;
+				cout << "FLARE SHOT! THE PIRATES JUMP UP IN FRENZY" << endl;
+				cout << endl;
+				_sleep(1000);
+				inventoryAmount[0]--;
+				cout << "SECOND FLARE SHOT! THE NOT SO HEARTY BUCANEERS FLEE INTO THE WOODS, OUT OF RANG AND SIGHT, LEAVING THE KEY FREE FOR THE TAKING " << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << key3retrieved << endl;
+				inventoryAmount[3] += 1;
+				cout << endl;
+				cout << "HEADING SOUTH TOWARDS THE TREASURE..." << endl;
+				_sleep(1200);
+				traveler.setPlayerLocation(12);
+				break;
+			}
+			case 11: //wait
+			{
+				while (traveler.visitPirateCamp != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				cout << "YOU ARE CAUGHT BY ONE OF THE HUNTERS N THEIR WAY BACK TO THE CAMP! THEY RANSACK YOU, TAKING ALL ITEMS IN YOUR POSSESSION INCLUDING KEYS AND SCROLLS" << endl;
+				_sleep(1000);
+				cout << endl;
+				cout << "YOUR JOURNEY ENDS HERE" << endl;
+				_sleep(1000);
+				cout << endl;
+				cout << "QUEST FAILED" << endl;
+				exit(0);
+			}
+			case 12: //treasure
+			{
+				while (traveler.visitPirateCamp != true && traveler.usedDistraction != true)
+				{
+					cout << "Im sorry! you cannot make that move. Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				cout << "CONGRATULATIONS ON MAKING IT THIS FAR! IF YOU HAVE ALL THE REQUIRED KEYS THEN PROCEED TO OPEN THE CHEST" << endl;
+				_sleep(1200);
+				traveler.showRoutes();
+				traveler.makeChoice();
+				break;
+			}
+			case 13://mountain side south
+			{
+				while (traveler.visitNorthMountain == false && traveler.visitRiver == false)
+				{
+					cout << "Im sorry! you cannot make that move . Try again" << endl;
+					traveler.showRoutes();
+					traveler.makeChoice();
+				}
+				traveler.visitSouthMountain = true;
+				_sleep(1500);
+				displayIconLegend();
+				displayInventory();
+				Map.updatePosition(13);
+				Map.displayMap();
+				_sleep(1500);
+				cout << key2retrieved << endl;
+				inventoryAmount[3]++;
+				cout << "CONTINUING SOUTH" << endl;
+				traveler.setPlayerLocation(9);
+			}
+			case 14://open chest
+			{
+				while (traveler.visitTreasure != true && inventoryAmount[3] !=3)
+				{
+					cout << "YOU DO NOT HAVE THE REUIRED MATERIALS TTHEREFORE YOU ARE NOT WORTH OF THE GREAT INTA PRIZE. YOU ARE COMMENDED FOR YOU DETERMINATION IN THIS QUEST BUT YOU HAVE FAILED" << endl; 
+					_sleep(1200);
+					exit(0);
+				} 
+				cout << "USING KEY 1..." << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "USING KEY 2..." << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "USING KEY 3..." << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "CHEST UNLOCKED" << endl;
+				cout << endl;
+				_sleep(1000);
+				cout << "CONGRATULATIONS! THE GREAT TREASURES OF INTA ARE YOURS FOR THE TAKING! YOU HAVE PROVED MOST WORTHY OF QUESTS OF LOS GOBERNATES" << endl;
+				_sleep(1000);
+			}
+			default:
+				break;
+				//please enter a valid direction
+
+			}
+	
+	}
 
 void menu::DisplayGameName() 
 {

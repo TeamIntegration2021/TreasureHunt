@@ -17,6 +17,7 @@ public:
 	void displayIconLegend();
 	void askName();
 	void beginGame();
+	void move();
 	void DisplayGameName();
 	void displayInventory();
 	string inventoryItem[4] = {"Flares", "Shovel", "hour supply of food and water", "Keys"};

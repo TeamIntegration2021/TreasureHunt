@@ -5,50 +5,50 @@
 #include"Menu.h";
 
 //test
-string mapH1 = " N ";
-string mapH2 = " | ";
-string mapH3 = " | ";
-string mapH4 = " | ";
-string mapH5 = " <W-----o-----E> ";
-string mapH6 = " | ";
-string mapH7 = " | ";
-string mapH8 = " | ";
-string mapH9 = " S ";
-string mapH10 = "                                                        <quest 1>(P)                                              ";
-string mapBoar = "                                                          Boar                                                  ";
-string mapH11 = "                                                       /         \\                                              ";
-string mapH12 = "                                                      /           \\                                             ";
-string mapH13 = "                                                     /             \\                                            ";
-string mapH14 = " 				                    ________________/                \\                                           ";
-string mapH15 = "				                   |                                  / ------------------------- <dirtpath>     ";
-string mapH16 = "                                  |                            <vines>                                    |     ";
-string mapH17 = "			                       |                               /                                       |     ";
-string mapH18 = "			                       |                              /                                        |     ";
-string mapH19 = "                                  |                             /                                         |     ";
-string mapH20 = "                                  |                            /                                          |     ";
-string mapH21 = "                                  |                           /                                           |     ";
-string mapH22 = "                                  |                          /                                            |     ";
-string mapH23 = "                                   ~~~~~  <river>   <quest 2>  /\\/\\/\\/\\/\\/\\/\\                             |     ";
-string mapH24 = "                                  ~~~~     ~~~~~~    |                                                  /       ";
-string mapH25 = "                                                     |                                                 /        ";
-string mapH26 = "                                                     |_____________                                   /         ";
-string mapH27 = "                                                                   \\                                 /          ";
-string mapH28 = "                                                                    \\                               /           ";
-string mapH29 = "                                                                     \\                             /            ";
-string mapH30 = "                                                                      \\                           /             ";
-string mapH31 = "                                                                       \\                         /              ";
-string mapH32 = "                                                                        \\                       /               ";
-string mapH33 = "                                                                         \\______  <quest 3> ___/                ";
-string mapH34 = "                                                                                      |                         ";
-string mapH35 = "                                                                                      |                         ";
-string mapH36 = "                                                                                      |                         ";
-string mapH37 = "                                                                                     /                          ";
-string mapH38 = "                                                                                    /                           ";
-string mapH39 = "                                                                /\/\/\/\/\ ________/                            ";
-string mapH40 = "                                                    Pirates    |<treasure>|                                    ";
-string mapH41 = "                                                               |__________|                                    ";
-string mapH42 = "                                                                                                                ";
-string mapH43 = "                                                                                                                ";
+string mapH1 = "        N ";
+string mapH2 = "        | ";
+string mapH3 = "        |                         ______________________________________________________________________________";
+string mapH4 = "        |                        /                                                                              \\         ";
+string mapH5 = "  <W----o------E>               /                          BEACH(P)                                              \\";
+string mapH6 = "        |                      /                            |                                                    |";
+string mapH7 = "        |                     /                             |                                                    |";
+string mapH8 = "        |                ____/                              |                                                    |";
+string mapH9 = "        S               /                                   |                                                    |";
+string mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+string mapBoar = "            /                       [/|\\]   [/|\\]         BOAR         [/|\\]    [/|\\]                             \\__";
+string mapH11 = "           /                                           /         \\                                                   |  ";
+string mapH12 = "          /                             [/|\\]         /           \\       [/|\\]                                      |       ";
+string mapH13 = "         |                                           /             \\                                                 |";
+string mapH14 = "         |                        __________________/               \\                           [===]                |";
+string mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+string mapH16 = "         |                        |                           <VINES>                                     |          |";
+string mapH17 = "         |	                  |                           /                                           |          |";
+string mapH18 = "         |      	          |                          / [\\_/]                                      |          |";
+string mapH19 = "         |                        |                         / [\\_/]                                       |[===]     |";
+string mapH20 = "         |                        |                        /                                              |          |";
+string mapH21 = "         |                        |                       /                                               |          |";
+string mapH22 = "         |                        |                      / <MOUNTAINSIDE(N)>                              |          |";
+string mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>  [/\\/\\/\\/\\/\\]                               |          |";
+string mapH24 = "         |                          (~~~) (~~~~)     |                                                    /          |";
+string mapH25 = "          \\                          \\_______________| [/\\/\\/\\/\\/\\]                                      /           |  ";
+string mapH26 = "           \\                                         |_____________                                     /            /";
+string mapH27 = "            \\___________                          <MOUNTAINSIDE(S)>\\                                   /           _/";
+string mapH28 = "                        |                                           \\                            [===]/          _|";
+string mapH29 = "                         \\                                           \\                               /          /  ";
+string mapH30 = "                          \\                                           \\                             /           |  ";
+string mapH31 = "                           \\                                           \\                           /            | ";
+string mapH32 = "                            \\                                           \\          [->x]          /             |  ";
+string mapH33 = "                             \\                                           \\______  <QUEST 3> _____/              | ";
+string mapH34 = "                              |                                                        |                        |";
+string mapH35 = "                              |                                                        |                        |";
+string mapH36 = "                              |                                                        |                        /";
+string mapH37 = "                              |                                                       /                    ____/     ";
+string mapH38 = "                              |                                                      /                    /      ";
+string mapH39 = "                               \\                                |\\/\\/\\/\\/\\/|________/                    /        ";
+string mapH40 = "                                \\                               |   INTA   |                            /        ";
+string mapH41 = "                                 |                              |__________|                           /        ";
+string mapH42 = "                                 |                                                                    /          ";
+string mapH43 = "                                 \\___________________________________________________________________/             ";
 string mapH44 = "                                                                                                                ";
 string mapH45 = "                                                                                                                ";
 
@@ -116,38 +116,89 @@ void TreasureHuntMap::displayMap() {
 
 }
 
-void TreasureHuntMap::updatePosition() {
-	int i = 10;
+void TreasureHuntMap::updatePosition(int i) 
+{
 	switch (i) {
 		case 1:
 			break;
 		case 2:
-			mapH10 = "                                                        <quest 1> (P)                                              ";
+			mapH10 = "              _________/                                <QUEST 1>(P)                                             \\ ";
+			mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
+
 			break;
 		case 3:
 			break;
 		case 4:
 			break;
 		case 5:
+			 mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>(P)        |";
+			 mapH27 = "            \\___________                          <MOUNTAINSIDE(S)>\\                                   /           _/";
+			 mapH40 = "                                \\                               |   INTA   |                            /        ";
+			 mapH31 = "                           \\                                           \\                           /            | ";
+			 mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>     [/\\/\\/\\/\\/\\]                            |          |";
+			 mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			 mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
+
 			break;
 		case 6:
+			mapH16 = "         |                        |                           <VINES>(P)                                  |          |";
+			mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+			mapH27 = "            \\___________                          <MOUNTAINSIDE(S)>\\                                   /           _/";
+			mapH40 = "                                \\                               |   INTA   |                            /        ";
+			mapH31 = "                           \\                                           \\                           /            | ";
+			mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>     [/\\/\\/\\/\\/\\]                            |          |";
+			mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
+
 			break;
 		case 7:
-			 mapH23 = "                                   ~~~~~  <river>   <quest 2>(P)  /\\/\\/\\/\\/\\/\\/\\                                  ";
+			mapH16 = "         |                        |                           <VINES>                                     |          |";
+			mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+			 mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>(P)  [/\\/\\/\\/\\/\\]                            |          |";
+			 mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			 mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
 			break;
 		case 8:
+			mapH16 = "         |                        |                           <VINES>                                     |          |";
+			mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+			mapH23 = "         |                      (P)(~~~)  <RIVER>   <QUEST 2>     [/\\/\\/\\/\\/\\]                            |          |";
+			mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
+			mapH27 = "            \\___________                          <MOUNTAINSIDE(S)>\\                                   /           _/";
 			break;
 		case 9:
-			 mapH33 = "                                                                         (P)\\______  <quest 3> ___/                ";
+			mapH16 = "         |                        |                           <VINES>                                     |          |";
+			mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+			 mapH31 = "                           \\                                           \\          (P)              /            | ";
+			 mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>     [/\\/\\/\\/\\/\\]                            |          |";
+			 mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			 mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
 			 break;
 		case 10:
 			break;
 		case 11:
 			break;
 		case 12:
-			 mapH39 = "                                                                /\\/\\/\\/\\/\\ (P)                           ";
-			 mapH40 = "                                                               |<treasure>|                                    ";
-			 mapH41 = "                                                               |__________|                                    ";
+			mapH16 = "         |                        |                           <VINES>                                     |          |";
+			 mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+			 mapH40 = "                                \\                            (P)|   INTA   |                            /        ";
+			 mapH31 = "                           \\                                           \\                           /            | ";
+			 mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>     [/\\/\\/\\/\\/\\]                            |          |";
+			 mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			 mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
+			 mapH27 = "            \\___________                          <MOUNTAINSIDE(S)>\\                                   /           _/";
+			 break;
+		case 13:
+			mapH16 = "         |                        |                           <VINES>                                     |          |";
+			mapH15 = "	 |                        |                                 / ------------------------- <DIRTPATH>           |";
+			mapH27 = "            \\___________                       (P)<MOUNTAINSIDE(S)>\\                                   /           _/";
+			mapH40 = "                                \\                               |   INTA   |                            /        ";
+			mapH31 = "                           \\                                           \\                           /            | ";
+			mapH23 = "         |                         (~~~)  <RIVER>   <QUEST 2>     [/\\/\\/\\/\\/\\]                            |          |";
+			mapH10 = "              _________/                                <QUEST 1>                                                \\ ";
+			mapH5 = "  <W----o------E>               /                          BEACH                                                 \\";
+
+			
 
 
 
