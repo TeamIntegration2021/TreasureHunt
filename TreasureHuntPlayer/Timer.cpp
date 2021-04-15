@@ -6,7 +6,7 @@
 
 
 
-int minutes = 15;
+int minutes = 24;
 int seconds = 0;
 
 void Timer::displayCountDown() {
@@ -21,9 +21,12 @@ void Timer::displayCountDown() {
 }
 
 void Timer::countDown() {
-    while (true) {
-        displayCountDown();
-        sleep(1);
+    for (int i = 24; i>0; i--;)
+    {
+        if (minutes == i && seconds == 0)
+            displayCountDown();
+    }
+        sleep(1000);
         minutes--;
         seconds = 59;
         seconds--;
@@ -32,11 +35,7 @@ void Timer::countDown() {
             minutes--;
             seconds = 59;
         }
-    }
+    
 }
 
-void Timer::takeTime() {
-
-
-}
 
