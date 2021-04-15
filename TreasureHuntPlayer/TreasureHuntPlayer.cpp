@@ -74,18 +74,27 @@ void TreasureHuntPlayer::setPlayerLocation(int location)
 	
 }
 
+void  TreasureHuntPlayer::setPreviousLocation(int location)
+{
+	previousSpot = static_cast<locations>(location);
+
+	previousChoice = location;
+}
+
+
 
 void TreasureHuntPlayer::makeChoice()
 {
 	cout << endl;
 	cout << makeMove;
 	cin >> playerChoice;
-	while (isValid(playerChoice) == false)
+	while (cin.fail())
 	{
 		cin.clear();
-		cin.ignore();
-		showRoutes();
+		cin.ignore(1000, '\n');
 		cout << "INVALID INPUT TRY AGAIN" << endl;
+		showRoutes();
+		cout << endl;
 		makeChoice();
 
 	}
@@ -152,12 +161,3 @@ string TreasureHuntPlayer::getPlayerLocation() const
 
 }
 
-bool TreasureHuntPlayer::isValid(int selection)
-{
-	if (selection != 0 && selection != 1 && selection != 2 && selection != 3 && selection != 4 && selection != 5 && selection != 6 && selection != 7 && selection != 8 && selection != 9 && selection != 10 && selection != 11 && selection != 12 && selection !=13 && selection !=14)
-	{
-		return false;
-	}
-	else
-		return true;
-}
