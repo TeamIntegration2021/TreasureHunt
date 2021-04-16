@@ -21,6 +21,8 @@ namespace std
 		void displayMap();
 		void updatePosition(int);
 
+		
+
 
 	};
 }
