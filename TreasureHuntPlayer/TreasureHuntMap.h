@@ -19,7 +19,7 @@ namespace std
 		
 	public: 
 		void displayMap();
-		void updatePosition();
+		void updatePosition(int);
 
 		
 
