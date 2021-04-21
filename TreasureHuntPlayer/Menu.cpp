@@ -267,7 +267,7 @@ void menu::move()
 {
 		
 		_sleep(1000);
-
+		
 		
 			switch (traveler.playerSpot) //add direct
 			{
@@ -275,6 +275,7 @@ void menu::move()
 				cout << "IT SEEMS YOU ARE NOT READY TO TAKE ON THE BOLD CHALLENGES THAT AWAIT YOU ON THE ISLAND! BEST OF LUCK IN YOUR FUTURE ENDEAVORS! GOODBYE " << traveler.getPlayerName() << endl;
 				exit(0);
 			case 1: //beach
+				traveler.displayStamina();
 				traveler.setPreviousLocation(1);
 				traveler.showRoutes();
 				cout << endl;
@@ -288,7 +289,6 @@ void menu::move()
 					cout << "Im sorry! you cannot make that move. Try again" << endl;
 					move();
 				}
-
 				traveler.visitForest = true;
 				traveler.setPlayerLocation(2);
 				cout << quest1scroll << endl;
@@ -299,6 +299,7 @@ void menu::move()
 				Map.displayMap();
 				cout << endl;
 				traveler.setPreviousLocation(2);
+				traveler.displayStamina();
 				traveler.showRoutes();
 				traveler.makeChoice();
 				break;
@@ -319,12 +320,14 @@ void menu::move()
 				cout << key1retrieved << endl;
 				cout << endl;
 				inventoryAmount[3] ++ ;
-				_sleep(700);
+				_sleep(1200);
 				cout << "IN THE PROCESS, YOU SACRIFICED 2 HOURS WORTH OF FOOD" << endl;
+				traveler.loseStamina(10);
 				inventoryAmount[2] -= 2;
 				_sleep(1200);
 				cout << "YOU CONTINUE ALONG THE TRAIL THAT LEADS TO THE GREAT INTA DIVIDES" << endl;
 				_sleep(2000);
+				traveler.displayStamina();
 				traveler.setPreviousLocation(3);
 				traveler.setPlayerLocation(7);
 				break;
@@ -343,6 +346,7 @@ void menu::move()
 				cout << fightBoar << endl;
 				traveler.setPreviousLocation(4);
 				inventoryAmount[1]--;
+				traveler.displayStamina();
 				traveler.showRoutes();
 				traveler.makeChoice();
 				break;
@@ -364,11 +368,13 @@ void menu::move()
 				Map.updatePosition(5);
 				Map.displayMap();
 				_sleep(1500);
+				traveler.loseStamina(80);
 				cout << "AFTER SOMETIME, YOU ARE ABLE TO LOSE THE BEAST AS HE FIXES HIS ON A PASSING-BY RABBIT AND ENGAGES IN A HUNT! TURNS OUT HE WAS JUST HUNGRY AFTER ALL..." << endl;
 				cout << endl;
 				_sleep(1500);
 				cout << "YOU CONTINUE SOUTHWARDS ALONG THE PATH" << endl;
 				_sleep(1500);
+				traveler.displayStamina();
 				traveler.setPreviousLocation(5);
 				traveler.setPlayerLocation(9);
 				
@@ -392,6 +398,8 @@ void menu::move()
 				_sleep(1500);
 				cout << "YOU CONTINUE ALONG THE TRAIL THAT LEADS TO THE GREAT INTA DIVIDES" << endl;
 				_sleep(1500);
+				traveler.loseStamina(20);
+				traveler.displayStamina();
 				traveler.setPreviousLocation(6);
 				traveler.setPlayerLocation(7);
 				break;
@@ -415,6 +423,7 @@ void menu::move()
 				cout << quest2scroll;
 				cout << endl;
 				traveler.setPreviousLocation(7);
+				traveler.displayStamina();
 				traveler.showRoutes();
 				traveler.makeChoice();
 				break;
@@ -435,6 +444,7 @@ void menu::move()
 				Map.updatePosition(8);
 				Map.displayMap();
 				_sleep(1500);
+				traveler.loseStamina(40);
 				traveler.setPreviousLocation(8);
 				traveler.setPlayerLocation(13);
 				break;
@@ -456,6 +466,7 @@ void menu::move()
 				_sleep(1500);
 				cout << quest3scroll << endl;
 				traveler.setPreviousLocation(9);
+				traveler.displayStamina();
 				traveler.showRoutes();
 				traveler.makeChoice();
 				break;
@@ -482,6 +493,7 @@ void menu::move()
 				cout << endl;
 				cout << "HEADING SOUTH TOWARDS THE TREASURE..." << endl;
 				_sleep(1200);
+				traveler.displayStamina();
 				traveler.setPreviousLocation(10);
 				traveler.setPlayerLocation(12);
 				break;
@@ -494,7 +506,7 @@ void menu::move()
 					cout << "Im sorry! you cannot make that move. Try again" << endl;
 					move();
 				}
-				cout << "YOU ARE CAUGHT BY ONE OF THE HUNTERS oN THEIR WAY BACK TO THE CAMP! THEY RANSACK YOU, TAKING ALL ITEMS IN YOUR POSSESSION INCLUDING KEYS AND SCROLLS" << endl;
+				cout << "YOU ARE CAUGHT BY ONE OF THE HUNTERS ON THEIR WAY BACK TO THE CAMP! THEY RANSACK YOU, TAKING ALL ITEMS IN YOUR POSSESSION INCLUDING KEYS AND SCROLLS" << endl;
 				_sleep(1000);
 				cout << endl;
 				cout << "YOUR JOURNEY ENDS HERE" << endl;
@@ -513,6 +525,7 @@ void menu::move()
 				}
 				cout << "CONGRATULATIONS ON MAKING IT THIS FAR! IF YOU HAVE ALL THE REQUIRED KEYS THEN PROCEED TO OPEN THE CHEST" << endl;
 				_sleep(1200);
+				traveler.displayStamina();
 				traveler.showRoutes();
 				traveler.makeChoice();
 				break;
@@ -526,6 +539,10 @@ void menu::move()
 					move();
 				}
 				traveler.visitSouthMountain = true;
+				if (traveler.visitNorthMountain == true)
+				{
+					traveler.loseStamina(90);
+				}
 				_sleep(1500);
 				displayIconLegend();
 				displayInventory();
@@ -535,6 +552,8 @@ void menu::move()
 				cout << key2retrieved << endl;
 				inventoryAmount[3]++;
 				cout << "CONTINUING SOUTH" << endl;
+				_sleep(1200);
+				traveler.displayStamina();
 				traveler.setPreviousLocation(13);
 				traveler.setPlayerLocation(9);
 				break;
@@ -547,6 +566,7 @@ void menu::move()
 					_sleep(1200);
 					exit(0);
 				} 
+				traveler.displayStamina();
 				cout << "USING KEY 1..." << endl;
 				cout << endl;
 				_sleep(1000);
@@ -563,6 +583,28 @@ void menu::move()
 				_sleep(1000);
 				exit(0);
 			}
+			case 15://consume food
+				while (traveler.stamina >= 200)
+				{
+					cout << "YOU'VE REACHED FULL CONSUMPTION CAPACITY. YOU CANNOT EAT OR DRINK ANYMORE FOR NOW" << endl;
+					cout << endl;
+					traveler.setPlayerLocation(traveler.previousChoice);
+					traveler.showRoutes();
+					traveler.makeChoice();
+					move();
+
+				}
+				traveler.consumeFood();
+				cout << "CONSUMING ..." << endl;
+				_sleep(1500);
+				cout << "FOOD AND DRINK CONSUMED! YOU CAN NOW CONTINUE WITH YOUR QUEST" << endl;
+				cout << endl;
+				_sleep(1500);
+				traveler.setPlayerLocation(traveler.previousChoice);
+				traveler.showRoutes();
+				traveler.makeChoice();
+				break;
+				
 			default:
 				break;
 				//please enter a valid direction

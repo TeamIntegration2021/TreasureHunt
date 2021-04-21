@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <string>
 #include "Menu.h"
+#include <conio.h>
+#include <stdio.h>
 
 #ifndef TreasureHuntPlayer_h
 #define TreasureHuntPlayer_h
@@ -20,20 +22,26 @@ namespace std
 	public:
 		enum locations
 		{
-			QUIT = 0, BEACH = 1, FOREST = 2, FEED = 3, FIGHT = 4, DIRTPATH = 5, GORGE = 6, MOUNTAINNORTH = 7, RIVER = 8, PIRATECAMP = 9, DISTRACT = 10, WAIT = 11, TREASURE = 12, MOUNTAINSOUTH=13 , OPEN =14
+			QUIT = 0, BEACH = 1, FOREST = 2, FEED = 3, FIGHT = 4, DIRTPATH = 5, GORGE = 6, MOUNTAINNORTH = 7, RIVER = 8, PIRATECAMP = 9, DISTRACT = 10, WAIT = 11, TREASURE = 12, MOUNTAINSOUTH=13 , OPEN =14, EAT =15
 		};
+		
+		void displayStamina();
+		void consumeFood();
+		void loseStamina(int);
+		void makeChoice();
 		void setPlayerName(string);
 		void setPlayerLocation(int);
 		void setPreviousLocation(int);
-		void makeChoice();
 		void showRoutes();
 		string getPlayerName() const;
 		string getPlayerLocation() const;
 		string makeMove = "MAKE YOUR MOVE:";
 		string playerName = " ";
 		string playerLocation = " ";
+		string staminaBar = "\\";
 		int playerChoice = 1;
 		int previousChoice = 1;
+		int stamina = 200;
 		locations playerSpot = BEACH;
 		locations previousSpot = BEACH;
 		bool fedBoar = false;

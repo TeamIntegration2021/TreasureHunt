@@ -4,6 +4,7 @@
 #include <string>
 #include "TreasureHuntPlayer.h"
 #include "ctype.h"
+#include <windows.h>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ void TreasureHuntPlayer::showRoutes()
 	{
 		cout << "3 - FEED AND DISTRACT(WEST)" << endl;
 		cout << "4 - ATTACK(EAST)" << endl;
+		cout << "15 - EAT AND DRINK" << endl;
 	}
 	case 3: //feed boar
 		break;
@@ -32,6 +34,7 @@ void TreasureHuntPlayer::showRoutes()
 	{
 		cout << "5 - RUN DOWN DIRTPATH(SOUTH)" << endl;
 		cout << "6 - SWING ACROSS GORGE(SW)" << endl;
+		cout << "15 - EAT AND DRINK" << endl;
 	}
 	case 5: //dirtpath
 		break;
@@ -41,6 +44,7 @@ void TreasureHuntPlayer::showRoutes()
 	{
 		cout << "13 - TREK THROUGH MOUNTAINS" << endl;
 		cout << "8 - SWIM ACROSS RIVER" << endl;
+		cout << "15 - EAT AND DRINK" << endl;
 	}
 	case 8: //river
 		break;
@@ -48,6 +52,7 @@ void TreasureHuntPlayer::showRoutes()
 	{
 		cout << "10 - DISTRACT" << endl;
 		cout << "11 - WAIT" << endl;
+		cout << "15 - EAT AND DRINK" << endl;
 	}
 	case 10: //distract
 		break;
@@ -81,13 +86,41 @@ void  TreasureHuntPlayer::setPreviousLocation(int location)
 	previousChoice = location;
 }
 
+void TreasureHuntPlayer::consumeFood()
+{
+	stamina += 10;
+}
 
+void TreasureHuntPlayer::displayStamina()
+{
+	printf("\033[0;32m");
+	
+	cout << endl;
+	cout << "[";
+	int i =  0;
+	do
+	{
+		cout << staminaBar;
+		i = i + 10;
+	} while (i < stamina);
+	
+	cout << "]" << endl;
+	cout << "Stamina: " << stamina << " HP" << endl;
+	cout << endl;
+	printf("\033[0m");
+}
+
+void TreasureHuntPlayer::loseStamina(int hp)
+{
+	stamina -= hp;
+}
 
 void TreasureHuntPlayer::makeChoice()
 {
 	cout << endl;
 	cout << makeMove;
-	cin >> playerChoice;
+	cin >> playerChoice; 
+	cout << endl;
 	while (cin.fail())
 	{
 		cin.clear();
@@ -100,6 +133,7 @@ void TreasureHuntPlayer::makeChoice()
 	}
 	setPlayerLocation(playerChoice);
 }
+
 
 /** member functions to return player name and location hint**/
 string TreasureHuntPlayer::getPlayerName() const
