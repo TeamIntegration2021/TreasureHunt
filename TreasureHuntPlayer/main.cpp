@@ -10,8 +10,8 @@ using namespace std;
 int main()
 {
 	menu travelerMenu;
-	//travelerMenu.DisplayGameName();
-	//travelerMenu.DisplayMenu();
+	travelerMenu.DisplayGameName();
+	travelerMenu.DisplayMenu();
 	travelerMenu.askName();
 	travelerMenu.displayIconLegend();
 	cout << endl;
