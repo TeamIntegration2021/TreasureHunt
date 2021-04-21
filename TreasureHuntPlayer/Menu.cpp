@@ -596,6 +596,7 @@ void menu::move()
 				}
 				traveler.consumeFood();
 				cout << "CONSUMING ..." << endl;
+				inventoryAmount[2]--;
 				_sleep(1500);
 				cout << "FOOD AND DRINK CONSUMED! YOU CAN NOW CONTINUE WITH YOUR QUEST" << endl;
 				cout << endl;
