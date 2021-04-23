@@ -5,6 +5,8 @@
 #include "TreasureHuntPlayer.h"
 #include "ctype.h"
 #include <windows.h>
+#include <chrono>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -89,6 +91,13 @@ void  TreasureHuntPlayer::setPreviousLocation(int location)
 void TreasureHuntPlayer::consumeFood()
 {
 	stamina += 10;
+	cout << "CONSUMING ..." << endl;
+	Sleep(1500);
+	cout << "FOOD AND DRINK CONSUMED! YOU CAN NOW CONTINUE WITH YOUR QUEST" << endl;
+	cout << endl;
+	Sleep(1500);
+	displayStamina();
+	 Sleep(1500);
 }
 
 void TreasureHuntPlayer::displayStamina()

@@ -11,7 +11,7 @@ int main()
 {
 	menu travelerMenu;
 	travelerMenu.DisplayGameName();
-	travelerMenu.DisplayMenu();
+	//travelerMenu.DisplayMenu();
 	travelerMenu.askName();
 	travelerMenu.displayIconLegend();
 	cout << endl;
